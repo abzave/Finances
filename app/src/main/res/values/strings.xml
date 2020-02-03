@@ -2,6 +2,9 @@
     <string name="app_name">Finances</string>
     <string name="add_expenditure_button">Añadir gasto</string>
     <string name="add_entry_button">Añadir ingreso</string>
-    <string name="view_expenditures_buttonn">Ver gastos</string>
-    <string name="stadistics_buttonn">Estadisticas</string>
+    <string name="view_expenditures_button">Ver gastos</string>
+    <string name="stadistics_button">Estadisticas</string>
+    <string name="amount_input">Monto</string>
+    <string name="description_input">Descripción</string>
+    <string name="add_button">Añadir</string>
 </resources>
