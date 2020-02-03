@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Finances</string>
+    <string name="add_expenditure_button">Añadir gasto</string>
+    <string name="add_entry_button">Añadir ingreso</string>
+    <string name="view_expenditures_buttonn">Ver gastos</string>
+    <string name="stadistics_buttonn">Estadisticas</string>
+</resources>
