@@ -7,4 +7,12 @@
     <string name="amount_input">Monto</string>
     <string name="description_input">Descripción</string>
     <string name="add_button">Añadir</string>
+    <string name="total_button">Monto total</string>
+    <string name="expended_button">Monto gastado</string>
+    <string name="remaining_button">Monto restante</string>
+    <string name="retirement_button">Monto de pensión</string>
+    <string name="emergencies_button">Monto de emergencias</string>
+    <string name="whims_button">Monto de caprichos</string>
+    <string name="entries_graphic_button">Gráfico de ingresos</string>
+    <string name="expenditures_graphic_button">Gráfico de gastos</string>
 </resources>
