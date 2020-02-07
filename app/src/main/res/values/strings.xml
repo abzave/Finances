@@ -15,4 +15,6 @@
     <string name="whims_button">Monto de caprichos</string>
     <string name="entries_graphic_button">Gráfico de ingresos</string>
     <string name="expenditures_graphic_button">Gráfico de gastos</string>
+    <string name="dollars_button">Dolares</string>
+    <string name="colones_button">Colones</string>
 </resources>
