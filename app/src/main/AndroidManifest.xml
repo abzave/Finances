@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Stadistics"></activity>
+        <activity android:name=".TotalAmount"></activity>
+        <activity android:name=".Stadistics" />
         <activity android:name=".ExpenditureView" />
         <activity android:name=".AddEntry" />
         <activity android:name=".MainActivity">
