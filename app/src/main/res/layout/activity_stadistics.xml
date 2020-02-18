@@ -7,81 +7,89 @@
     tools:context=".Stadistics">
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/totalAmountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="118dp"
+        android:onClick="goToAmountView"
         android:text="@string/total_button" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/expenditureChartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button12"
+        android:layout_below="@+id/EntriesChartsButton"
         android:layout_alignParentStart="true"
         android:layout_marginStart="109dp"
         android:layout_marginTop="14dp"
+        android:onClick="goToChart"
         android:text="@string/expenditures_graphic_button" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/EntriesChartsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button11"
+        android:layout_below="@+id/whimsAmountButton"
         android:layout_alignParentStart="true"
         android:layout_marginStart="102dp"
         android:layout_marginTop="16dp"
+        android:onClick="goToChart"
         android:text="@string/entries_graphic_button" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/whimsAmountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button10"
+        android:layout_below="@+id/emergencyAmountButton"
         android:layout_alignParentStart="true"
         android:layout_marginStart="97dp"
         android:layout_marginTop="12dp"
+        android:onClick="goToAmountView"
         android:text="@string/whims_button" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/emergencyAmountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button9"
+        android:layout_below="@+id/retairedmentAmountButton"
         android:layout_alignParentStart="true"
         android:layout_marginStart="91dp"
         android:layout_marginTop="17dp"
+        android:onClick="goToAmountView"
         android:text="@string/emergencies_button" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/retairedmentAmountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button8"
+        android:layout_below="@+id/remainingAmountButton"
         android:layout_alignParentStart="true"
         android:layout_marginStart="105dp"
         android:layout_marginTop="11dp"
+        android:onClick="goToAmountView"
         android:text="@string/retirement_button" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/remainingAmountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button7"
+        android:layout_below="@+id/expendedAmountButton"
         android:layout_alignParentStart="true"
         android:layout_marginStart="109dp"
         android:layout_marginTop="14dp"
+        android:onClick="goToAmountView"
         android:text="@string/remaining_button" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/expendedAmountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button5"
+        android:layout_below="@+id/totalAmountButton"
         android:layout_alignParentStart="true"
         android:layout_marginStart="109dp"
         android:layout_marginTop="13dp"
+        android:onClick="goToAmountView"
         android:text="@string/expended_button" />
 
 </RelativeLayout>
