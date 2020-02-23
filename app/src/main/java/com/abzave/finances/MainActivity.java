@@ -15,17 +15,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToAddExpenditure(View view){
-        Intent intent = new Intent(this, AddEntry.class);
-        startActivity(intent);
+        goToActivity(AddEntry.class);
     }
 
     public void goToExpenditureView(View view){
-        Intent intent = new Intent(this, ExpenditureView.class);
-        startActivity(intent);
+        goToActivity(ExpenditureView.class);
     }
 
     public void goToStadistics(View view){
-        Intent intent = new Intent(this, Stadistics.class);
+        goToActivity(Stadistics.class);
+    }
+
+    private void goToActivity(Class activity){
+        Intent intent = new Intent(this, activity);
         startActivity(intent);
     }
 
