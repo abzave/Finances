@@ -18,27 +18,27 @@ public class DataBase extends SQLiteOpenHelper {
     }
 
     private void createTables(SQLiteDatabase database){
-        database.execSQL("create table CurrencyType(id tinyint primary key autoincrement, " +
-                         "type text)");
-        database.execSQL("create table Expenditure(id int primary key autoincrement, " +
-                         "amount real, description text, currency tinyint,  " +
-                         "foreign key(currency) references CurrencyType(id))");
-        database.execSQL("create table Entry(id int primary key autoincrement, amount real, " +
-                         "description text, currency tinyint,  foreign key(currency) " +
-                         "references currencyType(id))");
-        database.execSQL("create table ReserveType(id tinyint primary key autoincrement, " +
-                         "type text)");
-        database.execSQL("create table Reserve(id int primary key autoincrement, type tinyint, " +
-                         "amount real, entry int, foreign key(type) references ReserveType(id), " +
-                         "foreign key(entry) references Entry(id))");
+        database.execSQL("CREATE TABLE IF NOT EXISTS CurrencyType(id INTEGER PRIMARY KEY " +
+                         "AUTOINCREMENT, type TEXT)");
+        database.execSQL("CREATE TABLE IF NOT EXISTS Expenditure(id INTEGER PRIMARY KEY " +
+                         "AUTOINCREMENT, amount REAL, description TEXT, currency TINYINT,  " +
+                         "FOREIGN KEY(currency) REFERENCES CurrencyType(id))");
+        database.execSQL("CREATE TABLE IF NOT EXISTS Entry(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                         "amount REAL, description TEXT, currency INT,  FOREIGN KEY(currency) " +
+                         "REFERENCES currencyType(id))");
+        database.execSQL("CREATE TABLE IF NOT EXISTS ReserveType(id INTEGER PRIMARY KEY " +
+                         "AUTOINCREMENT, type TEXT)");
+        database.execSQL("CREATE TABLE IF NOT EXISTS Reserve(id INTEGER PRIMARY KEY " +
+                         "AUTOINCREMENT, type INT, amount REAL, entry INT, FOREIGN KEY(type) " +
+                         "REFERENCES ReserveType(id), FOREIGN KEY(entry) REFERENCES Entry(id))");
     }
 
     private void insertValues(SQLiteDatabase database){
-        database.execSQL("insert into CurrencyType(type) values (\"Colones\")");
-        database.execSQL("insert into CurrencyType(type) values (\"Dolares\")");
-        database.execSQL("insert into ReserveType(type) values (\"Retiro\")");
-        database.execSQL("insert into ReserveType(type) values (\"Emergencias\")");
-        database.execSQL("insert into ReserveType(type) values (\"Caprichos\")");
+        database.execSQL("INSERT INTO CurrencyType(type) VALUES (\"Colones\")");
+        database.execSQL("INSERT INTO CurrencyType(type) VALUES (\"Dolares\")");
+        database.execSQL("INSERT INTO ReserveType(type) VALUES (\"Retiro\")");
+        database.execSQL("INSERT INTO ReserveType(type) VALUES (\"Emergencias\")");
+        database.execSQL("INSERT INTO ReserveType(type) VALUES (\"Caprichos\")");
     }
 
     @Override
