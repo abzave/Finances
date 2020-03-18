@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="111dp"
         android:layout_marginTop="46dp"
-        android:onClick="goToAddEntry"
+        android:onClick="goToAddExpenditure"
         android:text="@string/add_entry_button" />
 
     <Button

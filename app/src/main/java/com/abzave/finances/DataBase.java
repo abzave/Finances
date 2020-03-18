@@ -21,10 +21,10 @@ public class DataBase extends SQLiteOpenHelper {
         database.execSQL("CREATE TABLE IF NOT EXISTS CurrencyType(id INTEGER PRIMARY KEY " +
                          "AUTOINCREMENT, type TEXT)");
         database.execSQL("CREATE TABLE IF NOT EXISTS Expenditure(id INTEGER PRIMARY KEY " +
-                         "AUTOINCREMENT, amount REAL, description TEXT, currency TINYINT,  " +
+                         "AUTOINCREMENT, amount REAL, description TEXT, currency INTEGER,  " +
                          "FOREIGN KEY(currency) REFERENCES CurrencyType(id))");
         database.execSQL("CREATE TABLE IF NOT EXISTS Entry(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                         "amount REAL, description TEXT, currency INT,  FOREIGN KEY(currency) " +
+                         "amount REAL, description TEXT, currency INTEGER,  FOREIGN KEY(currency) " +
                          "REFERENCES currencyType(id))");
         database.execSQL("CREATE TABLE IF NOT EXISTS ReserveType(id INTEGER PRIMARY KEY " +
                          "AUTOINCREMENT, type TEXT)");

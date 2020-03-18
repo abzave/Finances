@@ -26,10 +26,6 @@ public class MainActivity extends AppCompatActivity implements IConstants{
         goToActivity(Stadistics.class);
     }
 
-    public void goToAddEntry(View view){
-        goToActivity(AddEntry.class);
-    }
-
     private void goToActivity(Class activity){
         Intent intent = new Intent(this, activity);
         startActivity(intent);
