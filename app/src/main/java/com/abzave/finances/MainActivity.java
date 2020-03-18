@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IConstants{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToAddExpenditure(View view){
-        goToActivity(AddEntry.class);
+        goToActivity(AddEntry.class, ENTRY_STRING, view.getId() == R.id.addEntry);
     }
 
     public void goToExpenditureView(View view){
@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToActivity(Class activity){
         Intent intent = new Intent(this, activity);
+        startActivity(intent);
+    }
+
+    private void goToActivity(Class activity, String name, Boolean value){
+        Intent intent = new Intent(this, activity);
+        intent.putExtra(name, value);
         startActivity(intent);
     }
 
