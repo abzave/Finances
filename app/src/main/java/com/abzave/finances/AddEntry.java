@@ -32,13 +32,14 @@ public class AddEntry extends AppCompatActivity implements IConstants{
     }
 
     public void add(View view){
-        DataBase dataBase = new DataBase(this, DATABASE_NAME, null, DATABASE_VERSION);
+        DataBase dataBase = new DataBase(this, DATABASE_NAME, CURSOR_FACTORY, DATABASE_VERSION);
         SQLiteDatabase dataBaseWriter = dataBase.getWritableDatabase();
         String amount = amountEdit.getText().toString();
         String description = descriptionEdit.getText().toString();
         int currency = getCurrencyId(dataBaseWriter);
         if(amount.isEmpty() || description.isEmpty()){
             Toast.makeText(this, IMCOMPLETE_CONTENT_MESSAGE, Toast.LENGTH_SHORT).show();
+            dataBaseWriter.close();
             return;
         }
         ContentValues values = new ContentValues();
