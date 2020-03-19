@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ExpenditureView extends AppCompatActivity implements IConstants{
+public class ExpenditureView extends AppCompatActivity implements DataBaseConnection{
 
-    LinearLayout layout;
-    TextView baseLabel;
+    private LinearLayout layout;
+    private TextView baseLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class ExpenditureView extends AppCompatActivity implements IConstants{
     }
 
     private void loadExpenditures(){
-        SQLiteDatabase dataBaseReader = getDataBase();
+        SQLiteDatabase dataBaseReader = getDataBaseReader(this);
         Cursor cursor = getExpenditures(dataBaseReader);
         if(!cursor.moveToFirst()){
             baseLabel.setText(NO_REGISTERS_MESSAGE);
@@ -37,11 +37,6 @@ public class ExpenditureView extends AppCompatActivity implements IConstants{
         addElements(cursor);
         cursor.close();
         layout.removeView(baseLabel);
-    }
-
-    private SQLiteDatabase getDataBase(){
-        DataBase dataBase = new DataBase(this, DATABASE_NAME, CURSOR_FACTORY, DATABASE_VERSION);
-        return dataBase.getReadableDatabase();
     }
 
     private Cursor getExpenditures(SQLiteDatabase dataBaseReader){

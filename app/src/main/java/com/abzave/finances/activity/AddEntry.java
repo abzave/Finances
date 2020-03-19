@@ -11,13 +11,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class AddEntry extends AppCompatActivity implements IConstants{
+public class AddEntry extends AppCompatActivity implements DataBaseConnection{
 
-    EditText amountEdit;
-    EditText descriptionEdit;
-    RadioButton colonesButton;
-    RadioButton dollarsButton;
-    Boolean isEntry;
+    private EditText amountEdit;
+    private EditText descriptionEdit;
+    private RadioButton colonesButton;
+    private Boolean isEntry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +25,12 @@ public class AddEntry extends AppCompatActivity implements IConstants{
         amountEdit = findViewById(R.id.amountEdit);
         descriptionEdit = findViewById(R.id.descriptionEdit);
         colonesButton = findViewById(R.id.colonesButton);
-        dollarsButton = findViewById(R.id.dollarsButton);
         isEntry = getIntent().getBooleanExtra(ENTRY_STRING, IS_ENTRY);
         Toast.makeText(this, getTable(), Toast.LENGTH_SHORT).show();
     }
 
     public void add(View view){
-        DataBase dataBase = new DataBase(this, DATABASE_NAME, CURSOR_FACTORY, DATABASE_VERSION);
-        SQLiteDatabase dataBaseWriter = dataBase.getWritableDatabase();
+        SQLiteDatabase dataBaseWriter = getDataBaseWriter(this);
         String amount = amountEdit.getText().toString();
         String description = descriptionEdit.getText().toString();
         int currency = getCurrencyId(dataBaseWriter);
