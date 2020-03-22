@@ -1,4 +1,4 @@
-package com.abzave.finances;
+package com.abzave.finances.dataBase;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

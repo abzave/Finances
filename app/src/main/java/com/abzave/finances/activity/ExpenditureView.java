@@ -1,4 +1,4 @@
-package com.abzave.finances;
+package com.abzave.finances.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ExpenditureView extends AppCompatActivity implements DataBaseConnection{
+import com.abzave.finances.R;
+import com.abzave.finances.dataBase.IDataBaseConnection;
+
+public class ExpenditureView extends AppCompatActivity implements IDataBaseConnection {
 
     private LinearLayout layout;
     private TextView baseLabel;

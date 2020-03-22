@@ -1,4 +1,4 @@
-package com.abzave.finances;
+package com.abzave.finances.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class AddEntry extends AppCompatActivity implements DataBaseConnection{
+import com.abzave.finances.R;
+import com.abzave.finances.dataBase.IDataBaseConnection;
+
+public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
 
     private EditText amountEdit;
     private EditText descriptionEdit;

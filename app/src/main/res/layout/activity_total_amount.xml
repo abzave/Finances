@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="75dp"
+        android:layout_marginStart="50sp"
         android:layout_marginTop="0dp"
         android:orientation="horizontal">
 
@@ -23,6 +23,11 @@
             android:text="@string/colones_button"
             android:textSize="24sp" />
 
+        <Space
+            android:layout_width="24sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
         <TextView
             android:id="@+id/colonesAmountLabel"
             android:layout_width="wrap_content"
@@ -33,15 +38,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/Layout2"
+        android:id="@+id/dollarsLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Layout1"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="75dp"
+        android:layout_marginStart="50sp"
         android:layout_marginTop="18dp"
-        android:layout_marginBottom="678dp"
         android:orientation="horizontal">
 
         <TextView
@@ -51,6 +54,11 @@
             android:layout_weight="1"
             android:text="@string/dollars_button"
             android:textSize="24sp" />
+
+        <Space
+            android:layout_width="24sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/dollarsAmountLabel"
