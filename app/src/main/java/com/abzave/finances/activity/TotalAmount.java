@@ -14,11 +14,13 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
 
     private TextView colonesAmountLabel;
     private TextView dollarsAmountLabel;
+    private String context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_total_amount);
+        context = getIntent().getStringExtra(CONTEXT);
         getViews();
         setAmounts();
     }
@@ -30,12 +32,30 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
 
     private void setAmounts(){
         SQLiteDatabase dataBaseReader = getDataBaseReader(this);
+        if (context.equals(TOTAL_AMOUNT_CONTEXT)){
+            requestDifference(dataBaseReader);
+        }else {
+            requestData(dataBaseReader);
+        }
+        dataBaseReader.close();
+    }
+
+    private void requestDifference(SQLiteDatabase dataBaseReader){
         Cursor entriesCursor = dataBaseReader.rawQuery(SUM_OF_ENTRIES_QUERY, null);
         Cursor expendituresCursor = dataBaseReader.rawQuery(SUM_OF_EXPENDITURES_QUERY, null);
         setLabels(entriesCursor, expendituresCursor);
         entriesCursor.close();
         expendituresCursor.close();
-        dataBaseReader.close();
+    }
+
+    private void requestData(SQLiteDatabase dataBaseReader){
+        Cursor cursor = dataBaseReader.rawQuery(getContextQuery(), null);
+        setLabels(cursor);
+        cursor.close();
+    }
+
+    private String getContextQuery(){
+        return SUM_OF_EXPENDITURES_QUERY;
     }
 
     private void setLabels(Cursor entriesCursor, Cursor expendituresCursor){
@@ -47,6 +67,17 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
         expenditure = expenditure != null && expendituresCursor.moveToNext() ? expendituresCursor : null;
         difference = getDifference(entry, expenditure);
         dollarsAmountLabel.setText(String.format(MONEY_FORMAT, difference));
+    }
+
+    private void setLabels(Cursor cursor){
+        Cursor information = cursor.moveToFirst() ? cursor : null;
+        colonesAmountLabel.setText(String.format(MONEY_FORMAT, getCursorValue(information)));
+        information = information != null && information.moveToNext() ? information : null;
+        dollarsAmountLabel.setText(String.format(MONEY_FORMAT, getCursorValue(information)));
+    }
+
+    private Double getCursorValue(Cursor cursor){
+        return cursor != null ? cursor.getDouble(SUM_COLUMN) : 0;
     }
 
     private double getDifference(Cursor entriesCursor, Cursor expendituresCursor){

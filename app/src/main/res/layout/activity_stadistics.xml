@@ -91,7 +91,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="109dp"
         android:layout_marginTop="13dp"
-        android:onClick="goToAmountView"
+        android:onClick="goToExpendedView"
         android:text="@string/expended_button" />
 
 </RelativeLayout>

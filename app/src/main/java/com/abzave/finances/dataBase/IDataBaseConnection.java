@@ -16,6 +16,8 @@ public interface IDataBaseConnection extends IConstants {
     String EXPENDITURES_QUERY = "SELECT Expenditure.amount, Expenditure.description, " +
                                 "CurrencyType.type FROM Expenditure INNER JOIN CurrencyType on " +
                                 "Expenditure.currency = CurrencyType.id";
+    String ENTRY_TABLE = "Entry";
+    String EXPENDITURE_TABLE = "Expenditure";
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     default SQLiteDatabase getDataBaseReader(Context context){
