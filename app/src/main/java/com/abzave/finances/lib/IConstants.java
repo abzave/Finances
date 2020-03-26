@@ -19,6 +19,7 @@ public interface IConstants {
     String CONTEXT= "context";
     String TOTAL_AMOUNT_CONTEXT = "totalAmount";
     String EXPENDED_CONTEXT = "expended";
+    String REMAINING_CONTEXT = "remaining";
     int DATABASE_VERSION = 1;
     int ID_COLUMN = 0;
     int DESCRIPTION_COLUMN = 1;

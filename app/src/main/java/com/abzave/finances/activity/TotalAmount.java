@@ -32,7 +32,7 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
 
     private void setAmounts(){
         SQLiteDatabase dataBaseReader = getDataBaseReader(this);
-        if (context.equals(TOTAL_AMOUNT_CONTEXT)){
+        if (context.equals(REMAINING_CONTEXT)){
             requestDifference(dataBaseReader);
         }else {
             requestData(dataBaseReader);
@@ -41,26 +41,33 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
     }
 
     private void requestDifference(SQLiteDatabase dataBaseReader){
-        Cursor entriesCursor = dataBaseReader.rawQuery(SUM_OF_ENTRIES_QUERY, null);
-        Cursor expendituresCursor = dataBaseReader.rawQuery(SUM_OF_EXPENDITURES_QUERY, null);
+        Cursor entriesCursor = dataBaseReader.rawQuery(SUM_OF_ENTRIES_QUERY, NO_SELECTION_ARGUMENTS);
+        Cursor expendituresCursor = dataBaseReader.rawQuery(SUM_OF_EXPENDITURES_QUERY, NO_SELECTION_ARGUMENTS);
         setLabels(entriesCursor, expendituresCursor);
         entriesCursor.close();
         expendituresCursor.close();
     }
 
     private void requestData(SQLiteDatabase dataBaseReader){
-        Cursor cursor = dataBaseReader.rawQuery(getContextQuery(), null);
-        setLabels(cursor);
+        Cursor cursor = dataBaseReader.rawQuery(getContextQuery(), NO_SELECTION_ARGUMENTS);
+        setLabels(cursor, NO_CURSOR);
         cursor.close();
     }
 
     private String getContextQuery(){
-        return SUM_OF_EXPENDITURES_QUERY;
+        switch (context){
+            case TOTAL_AMOUNT_CONTEXT:
+                return SUM_OF_ENTRIES_QUERY;
+            case EXPENDED_CONTEXT:
+                return SUM_OF_EXPENDITURES_QUERY;
+            default:
+                return null;
+        }
     }
 
     private void setLabels(Cursor entriesCursor, Cursor expendituresCursor){
-        Cursor entry = entriesCursor.moveToFirst() ? entriesCursor : null;
-        Cursor expenditure = expendituresCursor.moveToFirst() ? expendituresCursor : null;
+        Cursor entry = entriesCursor != null && entriesCursor.moveToFirst() ? entriesCursor : null;
+        Cursor expenditure = expendituresCursor != null && expendituresCursor.moveToFirst() ? expendituresCursor : null;
         double difference = getDifference(entry, expenditure);
         colonesAmountLabel.setText(String.format(MONEY_FORMAT, difference));
         entry = entry != null && entriesCursor.moveToNext() ? entriesCursor : null;
@@ -69,26 +76,13 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
         dollarsAmountLabel.setText(String.format(MONEY_FORMAT, difference));
     }
 
-    private void setLabels(Cursor cursor){
-        Cursor information = cursor.moveToFirst() ? cursor : null;
-        colonesAmountLabel.setText(String.format(MONEY_FORMAT, getCursorValue(information)));
-        information = information != null && information.moveToNext() ? information : null;
-        dollarsAmountLabel.setText(String.format(MONEY_FORMAT, getCursorValue(information)));
-    }
-
     private Double getCursorValue(Cursor cursor){
         return cursor != null ? cursor.getDouble(SUM_COLUMN) : 0;
     }
 
     private double getDifference(Cursor entriesCursor, Cursor expendituresCursor){
-        double entries = 0;
-        double expenditures = 0;
-        if (entriesCursor != null){
-            entries = entriesCursor.getDouble(SUM_COLUMN);
-        }
-        if (expendituresCursor != null){
-            expenditures = expendituresCursor.getDouble(SUM_COLUMN);
-        }
+        double entries = getCursorValue(entriesCursor);
+        double expenditures = getCursorValue(expendituresCursor);
         return entries - expenditures;
     }
 

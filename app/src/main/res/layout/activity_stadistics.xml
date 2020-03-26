@@ -80,7 +80,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="109dp"
         android:layout_marginTop="14dp"
-        android:onClick="goToAmountView"
+        android:onClick="goToRemainingView"
         android:text="@string/remaining_button" />
 
     <Button

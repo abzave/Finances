@@ -1,6 +1,7 @@
 package com.abzave.finances.dataBase;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 
@@ -18,6 +19,8 @@ public interface IDataBaseConnection extends IConstants {
                                 "Expenditure.currency = CurrencyType.id";
     String ENTRY_TABLE = "Entry";
     String EXPENDITURE_TABLE = "Expenditure";
+    Cursor NO_CURSOR = null;
+    String[] NO_SELECTION_ARGUMENTS = null;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     default SQLiteDatabase getDataBaseReader(Context context){
