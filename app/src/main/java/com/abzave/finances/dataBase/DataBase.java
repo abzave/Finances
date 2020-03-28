@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DataBase extends SQLiteOpenHelper {
+public class DataBase extends SQLiteOpenHelper implements IDataBaseConnection{
 
 
     public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
@@ -18,19 +18,11 @@ public class DataBase extends SQLiteOpenHelper {
     }
 
     private void createTables(SQLiteDatabase database){
-        database.execSQL("CREATE TABLE IF NOT EXISTS CurrencyType(id INTEGER PRIMARY KEY " +
-                         "AUTOINCREMENT, type TEXT)");
-        database.execSQL("CREATE TABLE IF NOT EXISTS Expenditure(id INTEGER PRIMARY KEY " +
-                         "AUTOINCREMENT, amount REAL, description TEXT, currency INTEGER,  " +
-                         "FOREIGN KEY(currency) REFERENCES CurrencyType(id))");
-        database.execSQL("CREATE TABLE IF NOT EXISTS Entry(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                         "amount REAL, description TEXT, currency INTEGER,  FOREIGN KEY(currency) " +
-                         "REFERENCES currencyType(id))");
-        database.execSQL("CREATE TABLE IF NOT EXISTS ReserveType(id INTEGER PRIMARY KEY " +
-                         "AUTOINCREMENT, type TEXT)");
-        database.execSQL("CREATE TABLE IF NOT EXISTS Reserve(id INTEGER PRIMARY KEY " +
-                         "AUTOINCREMENT, type INT, amount REAL, entry INT, FOREIGN KEY(type) " +
-                         "REFERENCES ReserveType(id), FOREIGN KEY(entry) REFERENCES Entry(id))");
+        database.execSQL(CREATE_CURRENCY_TYPE_TABLE);
+        database.execSQL(CREATE_EXPENDITURE_TABLE);
+        database.execSQL(CREATE_ENTRY_TABLE);
+        database.execSQL(CREATE_RESERVE_TYPE_TABLE);
+        database.execSQL(CREATE_RESERVE_TABLE);
     }
 
     private void insertValues(SQLiteDatabase database){

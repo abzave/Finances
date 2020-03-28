@@ -49,7 +49,7 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
     }
 
     private void requestData(SQLiteDatabase dataBaseReader){
-        Cursor cursor = dataBaseReader.rawQuery(getContextQuery(), NO_SELECTION_ARGUMENTS);
+        Cursor cursor = dataBaseReader.rawQuery(getContextQuery(), getContextParameters(dataBaseReader));
         setLabels(cursor, NO_CURSOR);
         cursor.close();
     }
@@ -60,9 +60,18 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
                 return SUM_OF_ENTRIES_QUERY;
             case EXPENDED_CONTEXT:
                 return SUM_OF_EXPENDITURES_QUERY;
+            case RETIREMENT_CONTEXT:
+                return SUM_OF_RETIREMENT_QUERY;
             default:
                 return null;
         }
+    }
+
+    private String[] getContextParameters(SQLiteDatabase database){
+        if(!context.equals(RETIREMENT_CONTEXT)){
+            return NO_SELECTION_ARGUMENTS;
+        }
+        return new String[]{Long.toString(getId(database, RESERVE_TYPE_QUERY, RETIREMENT))};
     }
 
     private void setLabels(Cursor entriesCursor, Cursor expendituresCursor){
