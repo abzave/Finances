@@ -21,6 +21,7 @@ public interface IConstants {
     String EXPENDED_CONTEXT = "expended";
     String REMAINING_CONTEXT = "remaining";
     String RETIREMENT_CONTEXT = "retirement";
+    String EMERGENCIES_CONTEXT = "emergencies";
     String TYPE = "type";
     String RETIREMENT = "Retiro";
     String EMERGENCIES = "Emergencias";

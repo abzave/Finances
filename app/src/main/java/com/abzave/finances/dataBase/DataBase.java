@@ -26,11 +26,11 @@ public class DataBase extends SQLiteOpenHelper implements IDataBaseConnection{
     }
 
     private void insertValues(SQLiteDatabase database){
-        database.execSQL("INSERT INTO CurrencyType(type) VALUES (\"Colones\")");
-        database.execSQL("INSERT INTO CurrencyType(type) VALUES (\"Dolares\")");
-        database.execSQL("INSERT INTO ReserveType(type) VALUES (\"Retiro\")");
-        database.execSQL("INSERT INTO ReserveType(type) VALUES (\"Emergencias\")");
-        database.execSQL("INSERT INTO ReserveType(type) VALUES (\"Caprichos\")");
+        database.execSQL(INSERT_COLONES_TYPE);
+        database.execSQL(INSERT_DOLLARS_TYPE);
+        database.execSQL(INSERT_RETIREMENT_TYPE);
+        database.execSQL(INSERT_EMERGENCIES_TYPE);
+        database.execSQL(INSERT_WHIMS_TYPE);
     }
 
     @Override

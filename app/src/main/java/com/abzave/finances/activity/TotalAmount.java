@@ -61,17 +61,26 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
             case EXPENDED_CONTEXT:
                 return SUM_OF_EXPENDITURES_QUERY;
             case RETIREMENT_CONTEXT:
-                return SUM_OF_RETIREMENT_QUERY;
+            case EMERGENCIES_CONTEXT:
+                return SUM_OF_RESERVE_QUERY;
             default:
                 return null;
         }
     }
 
     private String[] getContextParameters(SQLiteDatabase database){
-        if(!context.equals(RETIREMENT_CONTEXT)){
-            return NO_SELECTION_ARGUMENTS;
+        String reserveType;
+        switch (context){
+            case RETIREMENT_CONTEXT:
+                reserveType = RETIREMENT;
+                break;
+            case EMERGENCIES_CONTEXT:
+                reserveType = EMERGENCIES;
+                break;
+            default:
+                return NO_SELECTION_ARGUMENTS;
         }
-        return new String[]{Long.toString(getId(database, RESERVE_TYPE_QUERY, RETIREMENT))};
+        return new String[]{Long.toString(getId(database, RESERVE_TYPE_QUERY, reserveType))};
     }
 
     private void setLabels(Cursor entriesCursor, Cursor expendituresCursor){

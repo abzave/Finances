@@ -26,16 +26,21 @@ public interface IDataBaseConnection extends IConstants {
                                   "AUTOINCREMENT, type INT, amount REAL, entry INT, " +
                                   "FOREIGN KEY(type) REFERENCES ReserveType(id), " +
                                    "FOREIGN KEY(entry) REFERENCES Entry(id))";
+    String INSERT_COLONES_TYPE = "INSERT INTO CurrencyType(type) VALUES (\"Colones\")";
+    String INSERT_DOLLARS_TYPE = "INSERT INTO CurrencyType(type) VALUES (\"Dolares\")";
+    String INSERT_RETIREMENT_TYPE = "INSERT INTO ReserveType(type) VALUES (\"Retiro\")";
+    String INSERT_EMERGENCIES_TYPE = "INSERT INTO ReserveType(type) VALUES (\"Emergencias\")";
+    String INSERT_WHIMS_TYPE = "INSERT INTO ReserveType(type) VALUES (\"Caprichos\")";
     String SUM_OF_ENTRIES_QUERY = "SELECT SUM(amount) FROM Entry GROUP BY currency";
     String SUM_OF_EXPENDITURES_QUERY = "SELECT SUM(amount) FROM Expenditure GROUP BY currency";
+    String SUM_OF_RESERVE_QUERY = "SELECT SUM(Reserve.amount) FROM Reserve INNER JOIN Entry " +
+                                     "ON Reserve.entry = Entry.id WHERE type = ? GROUP BY " +
+                                     "Entry.currency";
     String CURRENCY_TYPE_QUERY = "SELECT id FROM CurrencyType WHERE type = ?";
     String RESERVE_TYPE_QUERY = "SELECT id FROM ReserveType WHERE type = ?";
     String EXPENDITURES_QUERY = "SELECT Expenditure.amount, Expenditure.description, " +
                                 "CurrencyType.type FROM Expenditure INNER JOIN CurrencyType on " +
                                 "Expenditure.currency = CurrencyType.id";
-    String SUM_OF_RETIREMENT_QUERY = "SELECT SUM(Reserve.amount) FROM Reserve INNER JOIN Entry " +
-                                     "ON Reserve.entry = Entry.id WHERE type = ? GROUP BY " +
-                                     "Entry.currency";
     String ENTRY_TABLE = "Entry";
     String EXPENDITURE_TABLE = "Expenditure";
     String RESERVE_TABLE = "Reserve";
