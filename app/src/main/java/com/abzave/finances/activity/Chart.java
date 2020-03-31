@@ -1,8 +1,10 @@
-package com.abzave.finances;
+package com.abzave.finances.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.abzave.finances.R;
 
 public class Chart extends AppCompatActivity {
 
