@@ -39,6 +39,10 @@ public class Stadistics extends AppCompatActivity implements IConstants {
         goToActivity(TotalAmount.class, EMERGENCIES_CONTEXT);
     }
 
+    public void goToWhimsView(View view){
+        goToActivity(TotalAmount.class, WHIMS_CONTEXT);
+    }
+
     public void goToChart(View view){
         goToActivity(Chart.class);
     }

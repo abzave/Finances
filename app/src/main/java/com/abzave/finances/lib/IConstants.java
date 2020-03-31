@@ -22,20 +22,14 @@ public interface IConstants {
     String REMAINING_CONTEXT = "remaining";
     String RETIREMENT_CONTEXT = "retirement";
     String EMERGENCIES_CONTEXT = "emergencies";
+    String WHIMS_CONTEXT = "whims";
     String TYPE = "type";
     String RETIREMENT = "Retiro";
     String EMERGENCIES = "Emergencias";
     String WHIMS = "Caprichos";
-    int DATABASE_VERSION = 1;
-    int ID_COLUMN = 0;
-    int DESCRIPTION_COLUMN = 1;
-    int AMOUNT_COLUMN = 0;
-    int CURRENCY_COLUMN = 2;
-    int SUM_COLUMN = 0;
     double RETIREMENT_PERCENTAGE = 0.05;
     double EMERGENCIES_PERCENTAGE = 0.1;
     double WHIMS_PERCENTAGE = 0.1;
     boolean IS_ENTRY = true;
-    SQLiteDatabase.CursorFactory CURSOR_FACTORY = null;
 
 }

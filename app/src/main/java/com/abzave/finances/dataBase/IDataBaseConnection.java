@@ -47,6 +47,13 @@ public interface IDataBaseConnection extends IConstants {
     Cursor NO_CURSOR = null;
     String[] NO_SELECTION_ARGUMENTS = null;
     long NO_INSERTION = -1;
+    int DATABASE_VERSION = 1;
+    int ID_COLUMN = 0;
+    int DESCRIPTION_COLUMN = 1;
+    int AMOUNT_COLUMN = 0;
+    int CURRENCY_COLUMN = 2;
+    int SUM_COLUMN = 0;
+    SQLiteDatabase.CursorFactory CURSOR_FACTORY = null;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     default SQLiteDatabase getDataBaseReader(Context context){

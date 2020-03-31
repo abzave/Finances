@@ -62,6 +62,7 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
                 return SUM_OF_EXPENDITURES_QUERY;
             case RETIREMENT_CONTEXT:
             case EMERGENCIES_CONTEXT:
+            case WHIMS_CONTEXT:
                 return SUM_OF_RESERVE_QUERY;
             default:
                 return null;
@@ -76,6 +77,9 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
                 break;
             case EMERGENCIES_CONTEXT:
                 reserveType = EMERGENCIES;
+                break;
+            case WHIMS_CONTEXT:
+                reserveType = WHIMS;
                 break;
             default:
                 return NO_SELECTION_ARGUMENTS;
