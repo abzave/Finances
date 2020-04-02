@@ -1,7 +1,5 @@
 package com.abzave.finances.lib;
 
-import android.database.sqlite.SQLiteDatabase;
-
 public interface IConstants {
 
     String ENTRY_STRING = "entry";
@@ -27,6 +25,7 @@ public interface IConstants {
     String RETIREMENT = "Retiro";
     String EMERGENCIES = "Emergencias";
     String WHIMS = "Caprichos";
+    String ENTRIES_CHART_NAME = "Ingresos";
     double RETIREMENT_PERCENTAGE = 0.05;
     double EMERGENCIES_PERCENTAGE = 0.1;
     double WHIMS_PERCENTAGE = 0.1;
