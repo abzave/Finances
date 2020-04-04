@@ -11,6 +11,7 @@ import com.abzave.finances.lib.IConstants;
 
 public interface IDataBaseConnection extends IConstants {
 
+    String DATABASE_NAME = "Finances";
     String CREATE_CURRENCY_TYPE_TABLE = "CREATE TABLE IF NOT EXISTS CurrencyType(id INTEGER " +
                                         "PRIMARY KEY AUTOINCREMENT, type TEXT)";
     String CREATE_EXPENDITURE_TABLE = "CREATE TABLE IF NOT EXISTS Expenditure(id INTEGER " +
@@ -34,8 +35,12 @@ public interface IDataBaseConnection extends IConstants {
     String SUM_OF_ENTRIES_QUERY = "SELECT SUM(amount) FROM Entry GROUP BY currency";
     String SUM_OF_EXPENDITURES_QUERY = "SELECT SUM(amount) FROM Expenditure GROUP BY currency";
     String SUM_OF_RESERVE_QUERY = "SELECT SUM(Reserve.amount) FROM Reserve INNER JOIN Entry " +
-                                     "ON Reserve.entry = Entry.id WHERE type = ? GROUP BY " +
-                                     "Entry.currency";
+                                  "ON Reserve.entry = Entry.id WHERE type = ? GROUP BY " +
+                                  "Entry.currency";
+    String SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION = "SELECT SUM(amount), description FROM Entry GROUP BY " +
+                                                 "currency, description";
+    String SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION = "SELECT SUM(amount), description FROM " +
+                                                      "Expenditure GROUP BY currency, description";
     String CURRENCY_TYPE_QUERY = "SELECT id FROM CurrencyType WHERE type = ?";
     String RESERVE_TYPE_QUERY = "SELECT id FROM ReserveType WHERE type = ?";
     String EXPENDITURES_QUERY = "SELECT Expenditure.amount, Expenditure.description, " +
