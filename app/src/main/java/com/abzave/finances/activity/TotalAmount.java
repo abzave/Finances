@@ -14,13 +14,13 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
 
     private TextView colonesAmountLabel;
     private TextView dollarsAmountLabel;
-    private String context;
+    private short context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_total_amount);
-        context = getIntent().getStringExtra(CONTEXT);
+        context = getIntent().getShortExtra(CONTEXT, TOTAL_AMOUNT_CONTEXT);
         getViews();
         setAmounts();
     }
@@ -32,7 +32,7 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
 
     private void setAmounts(){
         SQLiteDatabase dataBaseReader = getDataBaseReader(this);
-        if (context.equals(REMAINING_CONTEXT)){
+        if (context == REMAINING_CONTEXT){
             requestDifference(dataBaseReader);
         }else {
             requestData(dataBaseReader);
@@ -90,7 +90,7 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
     private void setLabels(Cursor entriesCursor, Cursor expendituresCursor){
         Cursor entry = entriesCursor != null && entriesCursor.moveToFirst() ? entriesCursor : null;
         Cursor expenditure = expendituresCursor != null && expendituresCursor.moveToFirst() ? expendituresCursor : null;
-        double difference = getDifference(entry, expenditure);
+        float difference = getDifference(entry, expenditure);
         colonesAmountLabel.setText(String.format(MONEY_FORMAT, difference));
         entry = entry != null && entriesCursor.moveToNext() ? entriesCursor : null;
         expenditure = expenditure != null && expendituresCursor.moveToNext() ? expendituresCursor : null;
@@ -98,13 +98,13 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
         dollarsAmountLabel.setText(String.format(MONEY_FORMAT, difference));
     }
 
-    private Double getCursorValue(Cursor cursor){
-        return cursor != null ? cursor.getDouble(SUM_COLUMN) : 0;
+    private Float getCursorValue(Cursor cursor){
+        return cursor != null ? cursor.getFloat(SUM_COLUMN) : 0;
     }
 
-    private double getDifference(Cursor entriesCursor, Cursor expendituresCursor){
-        double entries = getCursorValue(entriesCursor);
-        double expenditures = getCursorValue(expendituresCursor);
+    private float getDifference(Cursor entriesCursor, Cursor expendituresCursor){
+        float entries = getCursorValue(entriesCursor);
+        float expenditures = getCursorValue(expendituresCursor);
         return entries - expenditures;
     }
 

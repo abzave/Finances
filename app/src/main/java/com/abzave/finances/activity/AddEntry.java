@@ -75,10 +75,10 @@ public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
     }
 
     private void addReserves(SQLiteDatabase database, long entry, String amount){
-        double entryAmount = Double.valueOf(amount);
-        double retirement = entryAmount * RETIREMENT_PERCENTAGE;
-        double emergencies = entryAmount * EMERGENCIES_PERCENTAGE;
-        double whims = entryAmount * WHIMS_PERCENTAGE;
+        float entryAmount = Float.valueOf(amount);
+        float retirement = entryAmount * RETIREMENT_PERCENTAGE;
+        float emergencies = entryAmount * EMERGENCIES_PERCENTAGE;
+        float whims = entryAmount * WHIMS_PERCENTAGE;
         insertReserve(database, entry, retirement, RETIREMENT);
         insertReserve(database, entry, emergencies, EMERGENCIES);
         insertReserve(database, entry, whims, WHIMS);

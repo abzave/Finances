@@ -21,12 +21,14 @@ import java.util.ArrayList;
 public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
     PieChart chart;
+    short context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
         chart = findViewById(R.id.chart);
+        context = getIntent().getShortExtra(CONTEXT, ENTRIES_CONTEXT);
         setUpChart();
     }
 

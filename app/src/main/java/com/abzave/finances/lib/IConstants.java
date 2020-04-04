@@ -14,21 +14,22 @@ public interface IConstants {
     String DOLLARS = "Dolares";
     String NO_REGISTERS_MESSAGE = "No hay registros aún";
     String MONEY_FORMAT = "%,.2f";
-    String CONTEXT= "context";
-    String TOTAL_AMOUNT_CONTEXT = "totalAmount";
-    String EXPENDED_CONTEXT = "expended";
-    String REMAINING_CONTEXT = "remaining";
-    String RETIREMENT_CONTEXT = "retirement";
-    String EMERGENCIES_CONTEXT = "emergencies";
-    String WHIMS_CONTEXT = "whims";
+    String CONTEXT = "context";
     String TYPE = "type";
     String RETIREMENT = "Retiro";
     String EMERGENCIES = "Emergencias";
     String WHIMS = "Caprichos";
     String ENTRIES_CHART_NAME = "Ingresos";
-    double RETIREMENT_PERCENTAGE = 0.05;
-    double EMERGENCIES_PERCENTAGE = 0.1;
-    double WHIMS_PERCENTAGE = 0.1;
+    float RETIREMENT_PERCENTAGE = 0.05f;
+    float EMERGENCIES_PERCENTAGE = 0.1f;
+    float WHIMS_PERCENTAGE = 0.1f;
+    short TOTAL_AMOUNT_CONTEXT = 0;
+    short EXPENDED_CONTEXT = 1;
+    short REMAINING_CONTEXT = 2;
+    short RETIREMENT_CONTEXT = 3;
+    short EMERGENCIES_CONTEXT = 4;
+    short WHIMS_CONTEXT = 5;
+    short ENTRIES_CONTEXT = 6;
     boolean IS_ENTRY = true;
 
 }
