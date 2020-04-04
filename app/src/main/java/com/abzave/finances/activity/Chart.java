@@ -39,8 +39,12 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
     private void setChartDescription(){
         Description description = new Description();
-        description.setText(ENTRIES_CHART_NAME);
+        description.setText(getContextName());
         chart.setDescription(description);
+    }
+
+    private String getContextName(){
+        return context == ENTRIES_CONTEXT ? ENTRIES_CHART_NAME : EXPENDITURES_CHART_NAME;
     }
 
     private void setData(){
@@ -61,7 +65,11 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
     private Cursor getData(){
         SQLiteDatabase database = getDataBaseReader(this);
-        return database.rawQuery(SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION, NO_SELECTION_ARGUMENTS);
+        return database.rawQuery(getContextQuery(), NO_SELECTION_ARGUMENTS);
+    }
+
+    private String getContextQuery(){
+        return context == ENTRIES_CONTEXT ? SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION : SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION;
     }
 
 }

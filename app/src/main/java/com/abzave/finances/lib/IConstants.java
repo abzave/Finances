@@ -3,7 +3,6 @@ package com.abzave.finances.lib;
 public interface IConstants {
 
     String ENTRY_STRING = "entry";
-    String DATABASE_NAME = "Finances";
     String IMCOMPLETE_CONTENT_MESSAGE = "Debe completar todos los campos";
     String AMOUNT = "amount";
     String DESCRIPTION = "description";
@@ -20,6 +19,7 @@ public interface IConstants {
     String EMERGENCIES = "Emergencias";
     String WHIMS = "Caprichos";
     String ENTRIES_CHART_NAME = "Ingresos";
+    String EXPENDITURES_CHART_NAME = "Gastos";
     float RETIREMENT_PERCENTAGE = 0.05f;
     float EMERGENCIES_PERCENTAGE = 0.1f;
     float WHIMS_PERCENTAGE = 0.1f;
@@ -30,6 +30,7 @@ public interface IConstants {
     short EMERGENCIES_CONTEXT = 4;
     short WHIMS_CONTEXT = 5;
     short ENTRIES_CONTEXT = 6;
+    short EXPENDITURES_CONTEXT = 7;
     boolean IS_ENTRY = true;
 
 }
