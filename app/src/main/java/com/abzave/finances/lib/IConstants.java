@@ -23,6 +23,7 @@ public interface IConstants {
     float RETIREMENT_PERCENTAGE = 0.05f;
     float EMERGENCIES_PERCENTAGE = 0.1f;
     float WHIMS_PERCENTAGE = 0.1f;
+    int WRITE_EXTERNAL_STORAGE_PERMISSION = 1;
     short TOTAL_AMOUNT_CONTEXT = 0;
     short EXPENDED_CONTEXT = 1;
     short REMAINING_CONTEXT = 2;
