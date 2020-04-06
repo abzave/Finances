@@ -8,15 +8,24 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.abzave.finances.R;
+import com.abzave.finances.dataBase.IDataBaseConnection;
 import com.abzave.finances.lib.IConstants;
 
-public class MainActivity extends AppCompatActivity implements IConstants {
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+
+public class MainActivity extends AppCompatActivity implements IDataBaseConnection {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +53,29 @@ public class MainActivity extends AppCompatActivity implements IConstants {
     }
 
     private void createBackUp(){
+        try {
+            FileChannel sourceChannel = getSourceChannel();
+            FileChannel destinationChannel = getDestinationChannel();
+            destinationChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+            sourceChannel.close();
+            destinationChannel.close();
+            Toast.makeText(this, CREATED_TEXT, Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
 
+    private FileChannel getSourceChannel() throws FileNotFoundException {
+        File source = Environment.getDataDirectory();
+        String sourcePath = DATABASE_PATH + DATABASE_NAME;
+        source = new File(source, sourcePath);
+        return new FileInputStream(source).getChannel();
+    }
+
+    private FileChannel getDestinationChannel() throws FileNotFoundException {
+        File destination = getExternalFilesDir(ROOT_DIRECTORY);
+        destination = new File(destination, DATABASE_NAME);
+        return new FileOutputStream(destination).getChannel();
     }
 
     public void goToAddExpenditure(View view){

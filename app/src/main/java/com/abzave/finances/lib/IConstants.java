@@ -20,6 +20,8 @@ public interface IConstants {
     String WHIMS = "Caprichos";
     String ENTRIES_CHART_NAME = "Ingresos";
     String EXPENDITURES_CHART_NAME = "Gastos";
+    String ROOT_DIRECTORY = null;
+    String CREATED_TEXT = "¡Creado!";
     float RETIREMENT_PERCENTAGE = 0.05f;
     float EMERGENCIES_PERCENTAGE = 0.1f;
     float WHIMS_PERCENTAGE = 0.1f;
