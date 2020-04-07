@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Finances</string>
+    <string name="add_expenditure_button">Añadir gasto</string>
+    <string name="add_entry_button">Añadir ingreso</string>
+    <string name="view_expenditures_button">Ver gastos</string>
+    <string name="stadistics_button">Estadisticas</string>
+    <string name="amount_input">Monto</string>
+    <string name="description_input">Descripción</string>
+    <string name="add_button">Añadir</string>
+    <string name="total_button">Monto total</string>
+    <string name="expended_button">Monto gastado</string>
+    <string name="remaining_button">Monto restante</string>
+    <string name="retirement_button">Monto de pensión</string>
+    <string name="emergencies_button">Monto de emergencias</string>
+    <string name="whims_button">Monto de caprichos</string>
+    <string name="entries_graphic_button">Gráfico de ingresos</string>
+    <string name="expenditures_graphic_button">Gráfico de gastos</string>
+    <string name="dollars_button">Dolares: </string>
+    <string name="colones_button">Colones: </string>
+    <string name="backup_option">Backup</string>
+    <string name="restore_option">Restore</string>
+</resources>
