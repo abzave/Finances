@@ -49,6 +49,7 @@ public interface IDataBaseConnection extends IConstants {
     String ENTRY_TABLE = "Entry";
     String EXPENDITURE_TABLE = "Expenditure";
     String RESERVE_TABLE = "Reserve";
+    String DATABASE_PATH = "/data/com.abzave.finances/databases/";
     Cursor NO_CURSOR = null;
     String[] NO_SELECTION_ARGUMENTS = null;
     long NO_INSERTION = -1;
