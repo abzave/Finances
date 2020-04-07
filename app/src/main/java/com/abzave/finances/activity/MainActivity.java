@@ -48,15 +48,20 @@ public class MainActivity extends AppCompatActivity implements IDataBaseConnecti
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        createBackUp();
+        boolean isBackup = item.getItemId() == R.id.backup;
+        moveDataBase(isBackup);
         return super.onOptionsItemSelected(item);
     }
 
-    private void createBackUp(){
+    private void moveDataBase(boolean isBackup){
         try {
-            FileChannel sourceChannel = getSourceChannel();
-            FileChannel destinationChannel = getDestinationChannel();
-            destinationChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+            FileChannel sourceChannel = getSourceChannel(isBackup);
+            FileChannel destinationChannel = getDestinationChannel(isBackup);
+            if(isBackup) {
+                destinationChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+            }else {
+                sourceChannel.transferFrom(destinationChannel, 0, destinationChannel.size());
+            }
             sourceChannel.close();
             destinationChannel.close();
             Toast.makeText(this, CREATED_TEXT, Toast.LENGTH_SHORT).show();
@@ -65,17 +70,23 @@ public class MainActivity extends AppCompatActivity implements IDataBaseConnecti
         }
     }
 
-    private FileChannel getSourceChannel() throws FileNotFoundException {
+    private FileChannel getSourceChannel(boolean isBackup) throws FileNotFoundException {
         File source = Environment.getDataDirectory();
         String sourcePath = DATABASE_PATH + DATABASE_NAME;
         source = new File(source, sourcePath);
-        return new FileInputStream(source).getChannel();
+        if (isBackup) {
+            return new FileInputStream(source).getChannel();
+        }
+        return new FileOutputStream(source).getChannel();
     }
 
-    private FileChannel getDestinationChannel() throws FileNotFoundException {
+    private FileChannel getDestinationChannel(boolean isBackup) throws FileNotFoundException {
         File destination = getExternalFilesDir(ROOT_DIRECTORY);
         destination = new File(destination, DATABASE_NAME);
-        return new FileOutputStream(destination).getChannel();
+        if(isBackup) {
+            return new FileOutputStream(destination).getChannel();
+        }
+        return new FileInputStream(destination).getChannel();
     }
 
     public void goToAddExpenditure(View view){

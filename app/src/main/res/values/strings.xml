@@ -18,4 +18,5 @@
     <string name="dollars_button">Dolares: </string>
     <string name="colones_button">Colones: </string>
     <string name="backup_option">Backup</string>
+    <string name="restore_option">Restore</string>
 </resources>
