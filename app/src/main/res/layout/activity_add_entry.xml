@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#111A23"
     tools:context=".activity.AddEntry">
 
     <TableLayout
@@ -21,6 +22,8 @@
                 android:ems="10"
                 android:hint="@string/amount_input"
                 android:inputType="numberDecimal"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#4B4F58"
                 android:textSize="24sp" />
 
         </TableRow>
@@ -37,6 +40,8 @@
                 android:ems="10"
                 android:hint="@string/description_input"
                 android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#4B4F58"
                 android:textSize="24sp" />
         </TableRow>
 
@@ -49,15 +54,18 @@
                 android:id="@+id/addButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#0F121B"
                 android:onClick="add"
                 android:text="@string/add_button"
+                android:textColor="#87868B"
+                android:textColorHint="#4B4F58"
                 android:textSize="24sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center" >
+            android:gravity="center">
 
             <RadioGroup
                 android:id="@+id/currenciesRadioGroup"
@@ -69,13 +77,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="@string/colones_button" />
+                    android:text="@string/colones_button"
+                    android:textColor="#FFFFFF"
+                    android:theme="@style/RadioButtonStyle" />
 
                 <RadioButton
                     android:id="@+id/dollarsButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/dollars_button" />
+                    android:text="@string/dollars_button"
+                    android:textColor="#FFFFFF"
+                    android:theme="@style/RadioButtonStyle" />
             </RadioGroup>
         </TableRow>
     </TableLayout>

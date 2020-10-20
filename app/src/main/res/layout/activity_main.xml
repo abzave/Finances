@@ -4,29 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentBottom="true"
+    android:background="#111A23"
     tools:context=".activity.MainActivity">
 
     <Button
         android:id="@+id/addEntry"
-        android:layout_width="wrap_content"
+        android:layout_width="142dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="111dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="126dp"
         android:layout_marginTop="46dp"
+        android:layout_marginEnd="125dp"
+        android:background="#0F121B"
         android:onClick="goToAddExpenditure"
-        android:text="@string/add_entry_button" />
+        android:text="@string/add_entry_button"
+        android:textColor="#87868B" />
 
     <Button
-        android:id="@+id/stadistics"
-        android:layout_width="wrap_content"
+        android:id="@+id/addExpenditure"
+        android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/viewExpenditure"
+        android:layout_below="@+id/addEntry"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="15dp"
-        android:onClick="goToStadistics"
-        android:text="@string/stadistics_button" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="125dp"
+        android:background="#0F121B"
+        android:onClick="goToAddExpenditure"
+        android:text="@string/add_expenditure_button"
+        android:textColor="#87868B" />
 
     <Button
         android:id="@+id/viewExpenditure"
@@ -34,20 +43,28 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/addExpenditure"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="13dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="125dp"
+        android:background="#0F121B"
         android:onClick="goToExpenditureView"
-        android:text="@string/view_expenditures_button" />
+        android:text="@string/view_expenditures_button"
+        android:textColor="#87868B" />
 
     <Button
-        android:id="@+id/addExpenditure"
+        android:id="@+id/stadistics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addEntry"
+        android:layout_below="@+id/viewExpenditure"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="17dp"
-        android:onClick="goToAddExpenditure"
-        android:text="@string/add_expenditure_button" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="125dp"
+        android:background="#0F121B"
+        android:onClick="goToStadistics"
+        android:text="@string/stadistics_button"
+        android:textColor="#87868B" />
 
 </RelativeLayout>

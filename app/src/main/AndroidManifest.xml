@@ -12,11 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Chart"></activity>
-        <activity android:name=".activity.TotalAmount" />
-        <activity android:name=".activity.Stadistics" />
-        <activity android:name=".activity.ExpenditureView" />
-        <activity android:name=".activity.AddEntry" />
+        <activity android:name=".activity.Chart" android:configChanges="orientation|screenSize"></activity>
+        <activity android:name=".activity.TotalAmount" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".activity.Stadistics" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".activity.ExpenditureView" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".activity.AddEntry" android:configChanges="orientation|screenSize"/>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

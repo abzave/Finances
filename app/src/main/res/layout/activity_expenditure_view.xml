@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#111A23"
     tools:context=".activity.ExpenditureView">
 
     <ScrollView
-        android:layout_width="391dp"
-        android:layout_height="805dp"
+        android:layout_width="360dp"
+        android:layout_height="632dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/layout"
+            android:id="@+id/descriptionsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -23,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/description_input"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
         </LinearLayout>

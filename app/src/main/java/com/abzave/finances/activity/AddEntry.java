@@ -1,10 +1,12 @@
 package com.abzave.finances.activity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -13,6 +15,13 @@ import android.widget.Toast;
 
 import com.abzave.finances.R;
 import com.abzave.finances.dataBase.IDataBaseConnection;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 
 public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
 
@@ -32,6 +41,7 @@ public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
         Toast.makeText(this, getTable(), Toast.LENGTH_SHORT).show();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void add(View view){
         SQLiteDatabase dataBaseWriter = getDataBaseWriter(this);
         String amount = amountEdit.getText().toString();
@@ -50,13 +60,22 @@ public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
         clearFields();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private long insertData(SQLiteDatabase database, String amount, String description, int currency){
         ContentValues values = new ContentValues();
         values.put(AMOUNT, amount);
         values.put(DESCRIPTION, description);
         values.put(CURRENCY, currency);
+        values.put(DATE, getDate());
         String table = getTable();
         return validateInsertion(database.insert(table, NO_NULL_COLUMNS, values));
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private String getDate(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDateTime now = LocalDateTime.now();
+        return formatter.format(now);
     }
 
     private String getCheckedButton(){

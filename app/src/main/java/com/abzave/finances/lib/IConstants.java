@@ -7,6 +7,7 @@ public interface IConstants {
     String AMOUNT = "amount";
     String DESCRIPTION = "description";
     String CURRENCY = "currency";
+    String DATE = "date";
     String NO_NULL_COLUMNS = null;
     String INSERTION_FAILED_MESSAGE = "Falló la inserción";
     String COLONES = "Colones";
@@ -26,6 +27,7 @@ public interface IConstants {
     float EMERGENCIES_PERCENTAGE = 0.1f;
     float WHIMS_PERCENTAGE = 0.1f;
     int WRITE_EXTERNAL_STORAGE_PERMISSION = 1;
+    int BACKGROUND_COLOR = 0x111A23;
     short TOTAL_AMOUNT_CONTEXT = 0;
     short EXPENDED_CONTEXT = 1;
     short REMAINING_CONTEXT = 2;
@@ -35,5 +37,4 @@ public interface IConstants {
     short ENTRIES_CONTEXT = 6;
     short EXPENDITURES_CONTEXT = 7;
     boolean IS_ENTRY = true;
-
 }
