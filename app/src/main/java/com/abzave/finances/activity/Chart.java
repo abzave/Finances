@@ -17,22 +17,35 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.abzave.finances.R;
-import com.abzave.finances.dataBase.IDataBaseConnection;
+import com.abzave.finances.model.CurrencyType;
+import com.abzave.finances.model.database.IDataBaseConnection;
+import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.IDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.StringJoiner;
+
+import kotlin.Pair;
 
 public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
     private AlertDialog dialog;
     private PieChart chartColones;
     private PieChart chartDollars;
+    private LineChart lineChartColones;
+    private LineChart lineChartDollars;
     private short context;
 
     @Override
@@ -41,6 +54,8 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         setContentView(R.layout.activity_chart);
         chartColones = findViewById(R.id.chartColones);
         chartDollars = findViewById(R.id.chartDollars);
+        lineChartColones = findViewById(R.id.lineChartColones);
+        lineChartDollars = findViewById(R.id.lineChartDollars);
         context = getIntent().getShortExtra(CONTEXT, ENTRIES_CONTEXT);
         setUpChart();
     }
@@ -56,53 +71,111 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
     }
 
     private void setUpChart(){
-        setChartDescription(chartColones, COLONES);
-        setChartDescription(chartDollars, DOLLARS);
-        setData(chartColones, COLONES, getAllDescriptionsByCurrency(COLONES));
-        setData(chartDollars, DOLLARS, getAllDescriptionsByCurrency(DOLLARS));
+        setDataPie(chartColones, COLONES, getAllDescriptionsByCurrency(COLONES));
+        setDataPie(chartDollars, DOLLARS, getAllDescriptionsByCurrency(DOLLARS));
+        setDataLine(lineChartColones, COLONES, getAllDescriptionsByCurrency(COLONES));
+        setDataLine(lineChartDollars, DOLLARS, getAllDescriptionsByCurrency(DOLLARS));
+        styleLineChart(lineChartColones);
+        styleLineChart(lineChartDollars);
     }
 
-    private void setChartDescription(PieChart chart, String currency){
-        Description description = new Description();
-        description.setText(getContextName() + " " + currency);
-        description.setTextColor(Color.WHITE);
-        chart.setDescription(description);
-        chart.getLegend().setTextColor(Color.WHITE);
+    private void setDataPie(PieChart chart, String currency, ArrayList<String> descriptions){
+        chart.setBackgroundColor(BACKGROUND_COLOR);
         chart.setHoleColor(BACKGROUND_COLOR);
         chart.setTransparentCircleColor(BACKGROUND_COLOR);
-    }
-
-    private String getContextName(){
-        return context == ENTRIES_CONTEXT ? ENTRIES_CHART_NAME : EXPENDITURES_CHART_NAME;
-    }
-
-    private void setData(PieChart chart, String currency, ArrayList<String> descriptions){
-        Cursor data = getData(currency, descriptions);
+        Cursor data = getDataPie(currency, descriptions);
         ArrayList<PieEntry> entries = new ArrayList<>();
-        if (!data.moveToFirst()){
+        if (data == null || !data.moveToFirst()){
             Toast.makeText(this, NO_REGISTERS_MESSAGE, Toast.LENGTH_SHORT).show();
             return;
         }
-        while (!data.isAfterLast()){
+        while (!data.isAfterLast()) {
             entries.add(new PieEntry(data.getFloat(SUM_COLUMN), data.getString(DESCRIPTION_COLUMN_IN_SUM)));
             data.moveToNext();
         }
         PieDataSet dataSet = new PieDataSet(entries, "");
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         chart.setData(new PieData(dataSet));
+        data.close();
     }
 
-    private Cursor getData(String currency, ArrayList<String> descriptions){
+    private void setDataLine(LineChart chart, String currency, ArrayList<String> descriptions){
+        ArrayList<Entry> entries = new ArrayList<>();
+        ArrayList<String> labels = new ArrayList<>();
+        Cursor data = getDataLine(currency, descriptions);
+
+        if (data == null || !data.moveToFirst()){
+            Toast.makeText(this, NO_REGISTERS_MESSAGE, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        while (!data.isAfterLast()) {
+            entries.add(new Entry(data.getPosition(), data.getFloat(SUM_COLUMN)));
+            if (data.getString(DATE_COLUMN) != null) {
+                labels.add(data.getString(DATE_COLUMN));
+            }
+            data.moveToNext();
+        }
+
+        LineDataSet dataSet = new LineDataSet(entries, "");
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(dataSet);
+        LineData lineData = new LineData(dataSets);
+        lineData.setValueTextColor(Color.WHITE);
+        chart.setData(lineData);
+
+        XAxis x = chart.getXAxis();
+        x.setPosition(XAxis.XAxisPosition.BOTTOM);
+        x.setValueFormatter((value, axis) -> labels.get((int) value));
+
+        chart.invalidate();
+        data.close();
+    }
+
+    private void styleLineChart(LineChart chart) {
+        chart.setBackgroundColor(BACKGROUND_COLOR);
+        chart.getXAxis().setTextColor(Color.WHITE);
+        chart.getAxis(YAxis.AxisDependency.LEFT).setTextColor(Color.WHITE);
+    }
+
+    private Cursor getDataPie(String currency, ArrayList<String> descriptions){
         SQLiteDatabase database = getDataBaseReader(this);
-        String currencyId = String.valueOf(getId(database, CURRENCY_TYPE_QUERY, currency));
+
+        Pair<String, ?> currencyQuery = new Pair<>("type", currency);
+        ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
+        if (types.isEmpty()){
+            return null;
+        }
+
+        String currencyId = String.valueOf( types.get(0).get("id"));
         String[] whereValues = {currencyId};
-        String query = getContextQuery();
+        String query = getContextQueryPie();
         query += " " + parseArrayListToSqlList(descriptions) + " " + GROUP_BY_DESCRIPTION;
         return database.rawQuery(query, whereValues);
     }
 
-    private String getContextQuery(){
+    private Cursor getDataLine(String currency, ArrayList<String> descriptions){
+        SQLiteDatabase database = getDataBaseReader(this);
+
+        Pair<String, ?> currencyQuery = new Pair<>("type", currency);
+        ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
+        if (types.isEmpty()){
+            return null;
+        }
+
+        String currencyId = String.valueOf(types.get(0).get("id"));
+        String[] whereValues = {currencyId};
+        String query = getContextQueryLine();
+        query += " " + parseArrayListToSqlList(descriptions) + " " + GROUP_BY_DATE;
+        return database.rawQuery(query, whereValues);
+    }
+
+    private String getContextQueryPie(){
         return context == ENTRIES_CONTEXT ? SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION : SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION;
+    }
+
+    private String getContextQueryLine(){
+        return context == ENTRIES_CONTEXT ? SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION_AND_DATE : SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION_AND_DATE;
     }
 
     private String getDescriptionQueryByContext(){
@@ -111,7 +184,14 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
     private ArrayList<String> getAllDescriptionsByCurrency(String currency){
         SQLiteDatabase database = getDataBaseReader(this);
-        String currencyId = String.valueOf(getId(database, CURRENCY_TYPE_QUERY, currency));
+
+        Pair<String, ?> currencyQuery = new Pair<>("type", currency);
+        ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
+        if (types.isEmpty()){
+            return null;
+        }
+
+        String currencyId = String.valueOf((Integer) types.get(0).get("id"));
         String[] whereValues = {currencyId};
         Cursor data = database.rawQuery(getDescriptionQueryByContext(), whereValues);
         ArrayList<String> descriptions = new ArrayList<>();
@@ -139,7 +219,13 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         dialogBuilder.setView(popup);
         dialog = dialogBuilder.create();
         addDescriptionCheckboxes(popup);
-        setUpPopupActions(popup);
+        Button cancelButton = popup.findViewById(R.id.cancel_button);
+        Button filterButton = popup.findViewById(R.id.filter_button);
+        cancelButton.setOnClickListener(v -> dialog.dismiss());
+        filterButton.setOnClickListener(v -> {
+            filterByName(popup);
+            dialog.dismiss();
+        });
         dialog.show();
     }
 
@@ -165,16 +251,6 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         return currency.equals(DOLLARS) ? layout.findViewById(R.id.dollars_label) : layout.findViewById(R.id.colones_label);
     }
 
-    private void setUpPopupActions(View popup){
-        Button cancelButton = popup.findViewById(R.id.cancel_button);
-        Button filterButton = popup.findViewById(R.id.filter_button);
-        cancelButton.setOnClickListener(v -> dialog.dismiss());
-        filterButton.setOnClickListener(v -> {
-            filterByName(popup);
-            dialog.dismiss();
-        });
-    }
-
     private void filterByName(View popup){
         LinearLayout layout = popup.findViewById(R.id.descriptionsLayout);
         ArrayList<String> colonesDescriptions = getCheckedDescriptions(layout, COLONES);
@@ -183,8 +259,12 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         dollarsDescriptions = dollarsDescriptions.isEmpty() ? getAllDescriptionsByCurrency(DOLLARS) : dollarsDescriptions;
         chartColones.clear();
         chartDollars.clear();
-        setData(chartColones, COLONES, colonesDescriptions);
-        setData(chartDollars, DOLLARS, dollarsDescriptions);
+        lineChartColones.clear();
+        lineChartDollars.clear();
+        setDataPie(chartColones, COLONES, colonesDescriptions);
+        setDataPie(chartDollars, DOLLARS, dollarsDescriptions);
+        setDataLine(lineChartColones, COLONES, colonesDescriptions);
+        setDataLine(lineChartDollars, DOLLARS, dollarsDescriptions);
     }
 
     private ArrayList<String> getCheckedDescriptions(LinearLayout layout, String currency){

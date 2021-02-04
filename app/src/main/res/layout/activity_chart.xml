@@ -6,30 +6,62 @@
     android:background="#111A23"
     tools:context=".activity.Chart">
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/chartColones"
-        android:layout_width="wrap_content"
-        android:layout_height="307dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="-2dp"
-        android:layout_marginEnd="0dp"
-        android:background="#111A23"></com.github.mikephil.charting.charts.PieChart>
-
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/chartDollars"
-        android:layout_width="389dp"
-        android:layout_height="402dp"
-        android:layout_below="@+id/chartColones"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="10dp"
-        android:background="#111A23"></com.github.mikephil.charting.charts.PieChart>
+        android:layout_marginBottom="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/chartColones"
+                android:layout_width="match_parent"
+                android:layout_height="307dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="-2dp"
+                android:layout_marginEnd="0dp"
+                android:background="#111A23"></com.github.mikephil.charting.charts.PieChart>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/chartDollars"
+                android:layout_width="match_parent"
+                android:layout_height="307dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="10dp"
+                android:background="#111A23"></com.github.mikephil.charting.charts.PieChart>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChartColones"
+                android:layout_width="match_parent"
+                android:layout_height="307dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="-2dp"
+                android:layout_marginEnd="0dp"
+                android:background="#111A23"></com.github.mikephil.charting.charts.LineChart>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChartDollars"
+                android:layout_width="match_parent"
+                android:layout_height="307dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="10dp"
+                android:background="#111A23"></com.github.mikephil.charting.charts.LineChart>
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

@@ -1,8 +1,10 @@
-package com.abzave.finances.dataBase;
+package com.abzave.finances.model.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.abzave.finances.model.CurrencyType;
 
 public class DataBase extends SQLiteOpenHelper implements IDataBaseConnection{
 

@@ -24,4 +24,8 @@
     <string name="filter_by_name">Fitrar por nombre</string>
     <string name="filter">Filtrar</string>
     <string name="cancel">Cancelar</string>
+    <string name="change_chart">Cambiar tipo de gráfico</string>
+    <string name="charts">Gráficos</string>
+    <string name="pie_chart">Pie</string>
+    <string name="line_chart">Line</string>
 </resources>

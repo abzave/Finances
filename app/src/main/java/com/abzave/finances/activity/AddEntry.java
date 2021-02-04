@@ -4,7 +4,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,14 +13,14 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.abzave.finances.R;
-import com.abzave.finances.dataBase.IDataBaseConnection;
+import com.abzave.finances.model.CurrencyType;
+import com.abzave.finances.model.database.IDataBaseConnection;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.ArrayList;
+
+import kotlin.Pair;
 
 public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
 
@@ -34,11 +33,15 @@ public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_entry);
+        setupUi();
+        Toast.makeText(this, getTable(), Toast.LENGTH_SHORT).show();
+    }
+
+    private void setupUi(){
         amountEdit = findViewById(R.id.amountEdit);
         descriptionEdit = findViewById(R.id.descriptionEdit);
         colonesButton = findViewById(R.id.colonesButton);
         isEntry = getIntent().getBooleanExtra(ENTRY_STRING, IS_ENTRY);
-        Toast.makeText(this, getTable(), Toast.LENGTH_SHORT).show();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -46,7 +49,14 @@ public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
         SQLiteDatabase dataBaseWriter = getDataBaseWriter(this);
         String amount = amountEdit.getText().toString();
         String description = descriptionEdit.getText().toString();
-        int currency = getId(dataBaseWriter, CURRENCY_TYPE_QUERY, getCheckedButton());
+
+        Pair<String, ?> currencyQuery = new Pair<>("type", getCheckedButton());
+        ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
+        if (types.isEmpty()){
+            return;
+        }
+
+        int currency = (Integer) types.get(0).get("id");
         if(amount.isEmpty() || description.isEmpty()){
             Toast.makeText(this, IMCOMPLETE_CONTENT_MESSAGE, Toast.LENGTH_SHORT).show();
             dataBaseWriter.close();

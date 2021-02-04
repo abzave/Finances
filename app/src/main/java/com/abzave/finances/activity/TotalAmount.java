@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.abzave.finances.R;
-import com.abzave.finances.dataBase.IDataBaseConnection;
+import com.abzave.finances.model.database.IDataBaseConnection;
 
 public class TotalAmount extends AppCompatActivity implements IDataBaseConnection {
 

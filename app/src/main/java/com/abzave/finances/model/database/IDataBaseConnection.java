@@ -1,4 +1,4 @@
-package com.abzave.finances.dataBase;
+package com.abzave.finances.model.database;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -43,8 +43,13 @@ public interface IDataBaseConnection extends IConstants {
     String SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION = "SELECT SUM(amount), description FROM " +
                                                       "Expenditure WHERE currency = ? AND " +
                                                       "description IN";
+    String SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION_AND_DATE = "SELECT SUM(amount), description, strftime('%Y-%m',date) FROM Entry WHERE " +
+            "currency = ? AND description IN";
+    String SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION_AND_DATE = "SELECT SUM(amount), description, strftime('%Y %m %d', date) FROM " +
+            "Expenditure WHERE currency = ? AND " +
+            "description IN";
     String GROUP_BY_DESCRIPTION = "GROUP BY description";
-    String CURRENCY_TYPE_QUERY = "SELECT id FROM CurrencyType WHERE type = ?";
+    String GROUP_BY_DATE = "GROUP BY strftime('%Y-%m',date)";
     String RESERVE_TYPE_QUERY = "SELECT id FROM ReserveType WHERE type = ?";
     String EXPENDITURES_QUERY = "SELECT Expenditure.amount, Expenditure.description, " +
                                 "CurrencyType.type FROM Expenditure INNER JOIN CurrencyType on " +
@@ -66,6 +71,8 @@ public interface IDataBaseConnection extends IConstants {
     int AMOUNT_COLUMN = 0;
     int CURRENCY_COLUMN = 2;
     int SUM_COLUMN = 0;
+    int EXPENDITURES_DESCRIPTION_COLUMN = 1;
+    int DATE_COLUMN = 2;
     int DESCRIPTION_COLUMN = 0;
     SQLiteDatabase.CursorFactory CURSOR_FACTORY = null;
 

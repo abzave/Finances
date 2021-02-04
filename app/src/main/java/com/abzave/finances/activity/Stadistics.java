@@ -2,13 +2,11 @@ package com.abzave.finances.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.abzave.finances.R;
-import com.abzave.finances.dataBase.IDataBaseConnection;
 import com.abzave.finances.lib.IConstants;
 
 public class Stadistics extends AppCompatActivity implements IConstants {

@@ -7,19 +7,15 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.abzave.finances.R;
-import com.abzave.finances.dataBase.IDataBaseConnection;
-import com.abzave.finances.lib.IConstants;
+import com.abzave.finances.model.database.IDataBaseConnection;
 
 import java.io.File;
 import java.io.FileInputStream;
