@@ -3,6 +3,7 @@ package com.abzave.finances.model
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
+import android.database.sqlite.SQLiteQueryBuilder
 import android.icu.util.Freezable
 import com.abzave.finances.model.database.IDataBaseConnection
 import org.json.JSONObject
@@ -130,6 +131,14 @@ abstract class IBaseModelStatic: IDataBaseConnection {
         database.delete(tableName, whereCondition, IDataBaseConnection.NO_SELECTION_ARGUMENTS)
     }
 
+    fun sum(columns: ArrayList<String>): QueryModel {
+        return QueryModel(tableName).select(getSumColumns(columns))
+    }
+
+    fun select(selection: String): QueryModel {
+        return QueryModel(tableName).select(selection)
+    }
+
     protected fun columnsToValues(columns: HashMap<String, Any?>): ContentValues {
         val values = ContentValues()
 
@@ -160,10 +169,10 @@ abstract class IBaseModelStatic: IDataBaseConnection {
             val name = cursor.getColumnName(column)
 
             when (cursor.getType(column)) {
-                Cursor.FIELD_TYPE_NULL -> hash.put(name, null)
-                Cursor.FIELD_TYPE_BLOB -> hash.put(name, cursor.getBlob(column))
-                Cursor.FIELD_TYPE_FLOAT -> hash.put(name, cursor.getFloat(column))
-                Cursor.FIELD_TYPE_INTEGER -> hash.put(name, cursor.getInt(column))
+                Cursor.FIELD_TYPE_NULL -> hash[name] = null
+                Cursor.FIELD_TYPE_BLOB -> hash[name] = cursor.getBlob(column)
+                Cursor.FIELD_TYPE_FLOAT -> hash[name] = cursor.getFloat(column)
+                Cursor.FIELD_TYPE_INTEGER -> hash[name] = cursor.getInt(column)
                 Cursor.FIELD_TYPE_STRING -> hash.put(name, cursor.getString(column))
             }
         }
@@ -204,6 +213,11 @@ abstract class IBaseModelStatic: IDataBaseConnection {
 
     protected fun getColumnAssignmentList(columns: MutableSet<String>): String {
        return columns.joinToString(" = ? AND", "", " = ?")
+    }
+
+    protected fun getSumColumns(columns: ArrayList<String>): String {
+        val sumColumns = columns.map { column -> "SUM($column)" }
+        return sumColumns.joinToString(",")
     }
 
 }

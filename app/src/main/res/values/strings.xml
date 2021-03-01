@@ -3,6 +3,7 @@
     <string name="add_expenditure_button">Añadir gasto</string>
     <string name="add_entry_button">Añadir ingreso</string>
     <string name="view_expenditures_button">Ver gastos</string>
+    <string name="view_entries_button">Ver Ingresos</string>
     <string name="stadistics_button">Estadisticas</string>
     <string name="amount_input">Monto</string>
     <string name="description_input">Descripción</string>

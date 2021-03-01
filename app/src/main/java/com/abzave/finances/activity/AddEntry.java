@@ -83,7 +83,7 @@ public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private String getDate(){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDateTime now = LocalDateTime.now();
         return formatter.format(now);
     }

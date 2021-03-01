@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.abzave.finances.R;
 import com.abzave.finances.model.CurrencyType;
+import com.abzave.finances.model.Expenditure;
+import com.abzave.finances.model.QueryModel;
 import com.abzave.finances.model.database.IDataBaseConnection;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -29,13 +31,12 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.StringJoiner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import kotlin.Pair;
 
@@ -83,39 +84,42 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         chart.setBackgroundColor(BACKGROUND_COLOR);
         chart.setHoleColor(BACKGROUND_COLOR);
         chart.setTransparentCircleColor(BACKGROUND_COLOR);
-        Cursor data = getDataPie(currency, descriptions);
+
+        ArrayList<ArrayList<Object>> data = getDataPie(currency, descriptions);
         ArrayList<PieEntry> entries = new ArrayList<>();
-        if (data == null || !data.moveToFirst()){
+
+        if (data == null || data.isEmpty()){
             Toast.makeText(this, NO_REGISTERS_MESSAGE, Toast.LENGTH_SHORT).show();
             return;
         }
-        while (!data.isAfterLast()) {
-            entries.add(new PieEntry(data.getFloat(SUM_COLUMN), data.getString(DESCRIPTION_COLUMN_IN_SUM)));
-            data.moveToNext();
-        }
+
+        data.forEach(row -> {
+            Float sum = (Float) row.get(SUM_COLUMN);
+            String description = (String) row.get(DESCRIPTION_COLUMN_IN_SUM);
+
+            entries.add(new PieEntry(sum, description));
+        });
+
         PieDataSet dataSet = new PieDataSet(entries, "");
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         chart.setData(new PieData(dataSet));
-        data.close();
     }
 
     private void setDataLine(LineChart chart, String currency, ArrayList<String> descriptions){
         ArrayList<Entry> entries = new ArrayList<>();
         ArrayList<String> labels = new ArrayList<>();
-        Cursor data = getDataLine(currency, descriptions);
+        ArrayList<ArrayList<Object>> data = getDataLine(currency, descriptions);
 
-        if (data == null || !data.moveToFirst()){
+        if (data == null || data.isEmpty()){
             Toast.makeText(this, NO_REGISTERS_MESSAGE, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        while (!data.isAfterLast()) {
-            entries.add(new Entry(data.getPosition(), data.getFloat(SUM_COLUMN)));
-            if (data.getString(DATE_COLUMN) != null) {
-                labels.add(data.getString(DATE_COLUMN));
-            }
-            data.moveToNext();
-        }
+        data.forEach(row -> {
+            int position = data.indexOf(row);
+            entries.add(new Entry(position, (Float) row.get(SUM_COLUMN)));
+            labels.add( row.get(DATE_COLUMN) != null ? (String) row.get(DATE_COLUMN) : "");
+        });
 
         LineDataSet dataSet = new LineDataSet(entries, "");
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
@@ -126,10 +130,16 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
         XAxis x = chart.getXAxis();
         x.setPosition(XAxis.XAxisPosition.BOTTOM);
-        x.setValueFormatter((value, axis) -> labels.get((int) value));
+        x.setValueFormatter((value, axis) -> {
+            int index = Math.round(value);
+
+            if (index < 0 || index >= labels.size() || index != (int)value)
+                return "";
+
+            return labels.get(index);
+        });
 
         chart.invalidate();
-        data.close();
     }
 
     private void styleLineChart(LineChart chart) {
@@ -138,7 +148,7 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         chart.getAxis(YAxis.AxisDependency.LEFT).setTextColor(Color.WHITE);
     }
 
-    private Cursor getDataPie(String currency, ArrayList<String> descriptions){
+    private ArrayList<ArrayList<Object>> getDataPie(String currency, ArrayList<String> descriptions){
         SQLiteDatabase database = getDataBaseReader(this);
 
         Pair<String, ?> currencyQuery = new Pair<>("type", currency);
@@ -147,14 +157,44 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
             return null;
         }
 
-        String currencyId = String.valueOf( types.get(0).get("id"));
-        String[] whereValues = {currencyId};
-        String query = getContextQueryPie();
-        query += " " + parseArrayListToSqlList(descriptions) + " " + GROUP_BY_DESCRIPTION;
-        return database.rawQuery(query, whereValues);
+        ArrayList<ArrayList<Object>> data = new ArrayList<>();
+        String currencyId = String.valueOf(types.get(0).get("id"));
+        if (context == ENTRIES_CONTEXT) {
+            String[] whereValues = {currencyId};
+            String query = getContextQueryPie();
+            query += " " + parseArrayListToSqlList(descriptions) + " " + GROUP_BY_DESCRIPTION;
+            Cursor cursor = database.rawQuery(query, whereValues);
+
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                ArrayList<Object> row = new ArrayList<>();
+
+                row.add(cursor.getFloat(SUM_COLUMN));
+                row.add(cursor.getString(DESCRIPTION_COLUMN_IN_SUM));
+                data.add(row);
+
+                cursor.moveToNext();
+            }
+            cursor.close();
+        } else {
+            String condition = String.format("currency = %s AND description IN %s", currencyId, parseArrayListToSqlList(descriptions));
+            QueryModel query = Expenditure.Companion.select("SUM(amount), description").where(condition).group("description");
+
+            ArrayList<Object> amountSums = query.get(this, "amount");
+            ArrayList<Object> descriptionsGot = query.get(this, "description");
+
+            for (int elementIndex = 0; elementIndex < amountSums.size(); elementIndex++) {
+                ArrayList<Object> row = new ArrayList<>();
+
+                row.add(amountSums.get(elementIndex));
+                row.add(descriptionsGot.get(elementIndex));
+                data.add(row);
+            }
+        }
+        return data;
     }
 
-    private Cursor getDataLine(String currency, ArrayList<String> descriptions){
+    private ArrayList<ArrayList<Object>> getDataLine(String currency, ArrayList<String> descriptions){
         SQLiteDatabase database = getDataBaseReader(this);
 
         Pair<String, ?> currencyQuery = new Pair<>("type", currency);
@@ -163,23 +203,59 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
             return null;
         }
 
+        ArrayList<ArrayList<Object>> data = new ArrayList<>();
         String currencyId = String.valueOf(types.get(0).get("id"));
-        String[] whereValues = {currencyId};
-        String query = getContextQueryLine();
-        query += " " + parseArrayListToSqlList(descriptions) + " " + GROUP_BY_DATE;
-        return database.rawQuery(query, whereValues);
+        if (context == ENTRIES_CONTEXT) {
+            String[] whereValues = {currencyId};
+            String query = getContextQueryLine();
+            query += " " + parseArrayListToSqlList(descriptions) + " " + GROUP_BY_DATE;
+
+            Cursor cursor = database.rawQuery(query, whereValues);
+
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                ArrayList<Object> row = new ArrayList<>();
+
+                row.add(cursor.getFloat(SUM_COLUMN));
+                row.add(cursor.getString(DESCRIPTION_COLUMN_IN_SUM));
+                row.add(cursor.getString(DATE_COLUMN) != null ? cursor.getString(DATE_COLUMN) : "");
+                data.add(row);
+
+                cursor.moveToNext();
+            }
+            cursor.close();
+        } else {
+            String selection = "SUM(amount), description, strftime('%Y-%m',date)";
+            String condition = String.format("currency = %s AND description IN %s", currencyId, parseArrayListToSqlList(descriptions));
+            String group = "strftime('%Y-%m',REPLACE(date,'/','-'))";
+            QueryModel query = Expenditure.Companion.select(selection).where(condition).group(group);
+
+            ArrayList<Object> amountSums = query.get(this, "amount");
+            ArrayList<Object> descriptionsGot = query.get(this, "description");
+            ArrayList<Object> dates = query.get(this, "date");
+
+            for (int elementIndex = 0; elementIndex < amountSums.size(); elementIndex++) {
+                ArrayList<Object> row = new ArrayList<>();
+
+                row.add(amountSums.get(elementIndex));
+                row.add(descriptionsGot.get(elementIndex));
+                row.add(dates.get(elementIndex));
+                data.add(row);
+            }
+        }
+        return data;
     }
 
     private String getContextQueryPie(){
-        return context == ENTRIES_CONTEXT ? SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION : SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION;
+        return SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION;
     }
 
     private String getContextQueryLine(){
-        return context == ENTRIES_CONTEXT ? SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION_AND_DATE : SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION_AND_DATE;
+        return SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION_AND_DATE;
     }
 
     private String getDescriptionQueryByContext(){
-        return context == ENTRIES_CONTEXT ? ALL_ENTIRES_DESCRIPTIONS_FOR_CURRENCY : ALL_EXPENDITURES_DESCRIPTIONS_FOR_CURRENCY;
+        return  ALL_ENTIRES_DESCRIPTIONS_FOR_CURRENCY;
     }
 
     private ArrayList<String> getAllDescriptionsByCurrency(String currency){
@@ -192,18 +268,29 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         }
 
         String currencyId = String.valueOf((Integer) types.get(0).get("id"));
-        String[] whereValues = {currencyId};
-        Cursor data = database.rawQuery(getDescriptionQueryByContext(), whereValues);
         ArrayList<String> descriptions = new ArrayList<>();
-        if (!data.moveToFirst()){
-            Toast.makeText(this, NO_REGISTERS_MESSAGE, Toast.LENGTH_SHORT).show();
-            return descriptions;
+        if (context == ENTRIES_CONTEXT) {
+            String[] whereValues = {currencyId};
+            Cursor data = database.rawQuery(getDescriptionQueryByContext(), whereValues);
+
+            if (!data.moveToFirst()){
+                Toast.makeText(this, NO_REGISTERS_MESSAGE, Toast.LENGTH_SHORT).show();
+                return descriptions;
+            }
+            while (!data.isAfterLast()){
+                descriptions.add(data.getString(DESCRIPTION_COLUMN));
+                data.moveToNext();
+            }
+            data.close();
+        } else {
+            String condition = "currency = " + currencyId;
+            QueryModel query = Expenditure.Companion.select("description").where(condition).group("description");
+
+            ArrayList<Object> records = query.get(this, "description");
+            records.forEach(row -> {
+                descriptions.add((String) row);
+            });
         }
-        while (!data.isAfterLast()){
-            descriptions.add(data.getString(DESCRIPTION_COLUMN));
-            data.moveToNext();
-        }
-        data.close();
         return descriptions;
     }
 

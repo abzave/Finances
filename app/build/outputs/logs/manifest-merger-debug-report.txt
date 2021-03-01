@@ -4,7 +4,7 @@ ADDED from D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidMani
 INJECTED from D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:2:1-29:12
 INJECTED from D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:2:1-29:12
 INJECTED from D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:2:1-29:12
-MERGED from [androidx.core:core-ktx:1.5.0-alpha05] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\3ff8a87fc4ac239117a17037dbadfccb\core-ktx-1.5.0-alpha05\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.core:core-ktx:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\fe471d7598911a241408e8ece4976634\core-ktx-1.5.0-beta01\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\372e4e0a5d988649676f2f5b47c49591\appcompat-1.0.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\60ccfff2191fccec888ed67c255ab06f\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0-alpha] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\0256bfcbfe12440e0a1d55ba3e68bdc4\MPAndroidChart-v3.1.0-alpha\AndroidManifest.xml:2:1-20:12
@@ -21,7 +21,7 @@ MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Abraha
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\afb152ba3201dbd4366b40316533396f\customview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\a1acf06b413e002216e05eb1d421e29f\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\845cfca60e87058fe0e2ccc53085ac4b\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.5.0-alpha05] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d2f022ba134b75fd9f248ff18726e2ee\core-1.5.0-alpha05\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.core:core:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\4d4c251c4a3c979ed7ca5d62bc38a4cf\core-1.5.0-beta01\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d9911d7459989d8a4202783eb3061bcd\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\46da41f9e0250b0a4486d5eca9b979d9\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\64325338e615726c69bc7379f13927c4\lifecycle-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
@@ -62,12 +62,12 @@ application
 ADDED from D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:8:5-27:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\60ccfff2191fccec888ed67c255ab06f\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\60ccfff2191fccec888ed67c255ab06f\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
-MERGED from [androidx.core:core:1.5.0-alpha05] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d2f022ba134b75fd9f248ff18726e2ee\core-1.5.0-alpha05\AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.5.0-alpha05] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d2f022ba134b75fd9f248ff18726e2ee\core-1.5.0-alpha05\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\4d4c251c4a3c979ed7ca5d62bc38a4cf\core-1.5.0-beta01\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\4d4c251c4a3c979ed7ca5d62bc38a4cf\core-1.5.0-beta01\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d9911d7459989d8a4202783eb3061bcd\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d9911d7459989d8a4202783eb3061bcd\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.5.0-alpha05] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d2f022ba134b75fd9f248ff18726e2ee\core-1.5.0-alpha05\AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\4d4c251c4a3c979ed7ca5d62bc38a4cf\core-1.5.0-beta01\AndroidManifest.xml:24:18-86
 	android:supportsRtl
 		ADDED from D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:13:9-35
 	android:label
@@ -128,8 +128,8 @@ uses-sdk
 INJECTED from D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml
 INJECTED from D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml
-MERGED from [androidx.core:core-ktx:1.5.0-alpha05] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\3ff8a87fc4ac239117a17037dbadfccb\core-ktx-1.5.0-alpha05\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.5.0-alpha05] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\3ff8a87fc4ac239117a17037dbadfccb\core-ktx-1.5.0-alpha05\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\fe471d7598911a241408e8ece4976634\core-ktx-1.5.0-beta01\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\fe471d7598911a241408e8ece4976634\core-ktx-1.5.0-beta01\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\372e4e0a5d988649676f2f5b47c49591\appcompat-1.0.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\372e4e0a5d988649676f2f5b47c49591\appcompat-1.0.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\60ccfff2191fccec888ed67c255ab06f\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
@@ -162,8 +162,8 @@ MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Abra
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\a1acf06b413e002216e05eb1d421e29f\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\845cfca60e87058fe0e2ccc53085ac4b\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\845cfca60e87058fe0e2ccc53085ac4b\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.5.0-alpha05] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d2f022ba134b75fd9f248ff18726e2ee\core-1.5.0-alpha05\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.5.0-alpha05] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d2f022ba134b75fd9f248ff18726e2ee\core-1.5.0-alpha05\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\4d4c251c4a3c979ed7ca5d62bc38a4cf\core-1.5.0-beta01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\4d4c251c4a3c979ed7ca5d62bc38a4cf\core-1.5.0-beta01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d9911d7459989d8a4202783eb3061bcd\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\d9911d7459989d8a4202783eb3061bcd\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\46da41f9e0250b0a4486d5eca9b979d9\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44

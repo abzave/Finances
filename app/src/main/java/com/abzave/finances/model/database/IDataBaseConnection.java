@@ -34,35 +34,23 @@ public interface IDataBaseConnection extends IConstants {
     String INSERT_EMERGENCIES_TYPE = "INSERT INTO ReserveType(type) VALUES (\"Emergencias\")";
     String INSERT_WHIMS_TYPE = "INSERT INTO ReserveType(type) VALUES (\"Caprichos\")";
     String SUM_OF_ENTRIES_QUERY = "SELECT SUM(amount) FROM Entry GROUP BY currency";
-    String SUM_OF_EXPENDITURES_QUERY = "SELECT SUM(amount) FROM Expenditure GROUP BY currency";
     String SUM_OF_RESERVE_QUERY = "SELECT SUM(Reserve.amount) FROM Reserve INNER JOIN Entry " +
                                   "ON Reserve.entry = Entry.id WHERE type = ? GROUP BY " +
                                   "Entry.currency";
     String SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION = "SELECT SUM(amount), description FROM Entry WHERE " +
                                                  "currency = ? AND description IN";
-    String SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION = "SELECT SUM(amount), description FROM " +
-                                                      "Expenditure WHERE currency = ? AND " +
-                                                      "description IN";
-    String SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION_AND_DATE = "SELECT SUM(amount), description, strftime('%Y-%m',date) FROM Entry WHERE " +
+    String SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION_AND_DATE = "SELECT SUM(amount), description, strftime('%Y-%m', REPLACE(date,'/','-')) FROM Entry WHERE " +
             "currency = ? AND description IN";
-    String SUM_OF_EXPENDITURES_QUERY_BY_DESCRIPTION_AND_DATE = "SELECT SUM(amount), description, strftime('%Y %m %d', date) FROM " +
-            "Expenditure WHERE currency = ? AND " +
-            "description IN";
     String GROUP_BY_DESCRIPTION = "GROUP BY description";
-    String GROUP_BY_DATE = "GROUP BY strftime('%Y-%m',date)";
+    String GROUP_BY_DATE = "GROUP BY strftime('%Y-%m',REPLACE(date,'/','-'))";
     String RESERVE_TYPE_QUERY = "SELECT id FROM ReserveType WHERE type = ?";
-    String EXPENDITURES_QUERY = "SELECT Expenditure.amount, Expenditure.description, " +
-                                "CurrencyType.type FROM Expenditure INNER JOIN CurrencyType on " +
-                                "Expenditure.currency = CurrencyType.id";
     String ALL_ENTIRES_DESCRIPTIONS_FOR_CURRENCY = "SELECT description FROM Entry " +
                                                    "WHERE currency = ? GROUP BY description";
-    String ALL_EXPENDITURES_DESCRIPTIONS_FOR_CURRENCY = "SELECT description FROM Expenditure " +
-                                                        "WHERE currency = ? GROUP BY description";
+    String ENTRIES_WITH_CURRENCY_QUERY = "SELECT amount, description, type FROM Entry INNER JOIN CurrencyType on Entry.currency = CurrencyType.id";
     String ENTRY_TABLE = "Entry";
     String EXPENDITURE_TABLE = "Expenditure";
     String RESERVE_TABLE = "Reserve";
     String DATABASE_PATH = "/data/com.abzave.finances/databases/";
-    Cursor NO_CURSOR = null;
     String[] NO_SELECTION_ARGUMENTS = null;
     long NO_INSERTION = -1;
     int DATABASE_VERSION = 1;

@@ -53,7 +53,7 @@
         android:textColor="#87868B" />
 
     <Button
-        android:id="@+id/stadistics"
+        android:id="@+id/checkEntries"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewExpenditure"
@@ -62,6 +62,21 @@
         android:layout_marginStart="126dp"
         android:layout_marginTop="46dp"
         android:layout_marginEnd="125dp"
+        android:background="#0F121B"
+        android:onClick="goToExpenditureView"
+        android:text="@string/view_entries_button"
+        android:textColor="#87868B" />
+
+    <Button
+        android:id="@+id/stadistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkEntries"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="127dp"
         android:background="#0F121B"
         android:onClick="goToStadistics"
         android:text="@string/stadistics_button"

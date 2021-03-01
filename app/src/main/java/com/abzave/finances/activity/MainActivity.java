@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements IDataBaseConnecti
     }
 
     public void goToExpenditureView(View view){
-        goToActivity(ExpenditureView.class);
+        goToActivity(ExpenditureView.class, ENTRY_STRING, view.getId() == R.id.checkEntries);
     }
 
     public void goToStadistics(View view){
