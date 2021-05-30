@@ -14,11 +14,15 @@ import android.widget.Toast;
 
 import com.abzave.finances.R;
 import com.abzave.finances.model.CurrencyType;
+import com.abzave.finances.model.Entry;
+import com.abzave.finances.model.Expenditure;
+import com.abzave.finances.model.IBaseModel;
 import com.abzave.finances.model.database.IDataBaseConnection;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import kotlin.Pair;
 
@@ -62,7 +66,7 @@ public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
             dataBaseWriter.close();
             return;
         }
-        long returnedId = insertData(dataBaseWriter, amount, description, currency);
+        long returnedId = insertData(amount, description, currency);
         if(returnedId != NO_INSERTION && getTable().equals(ENTRY_TABLE)){
             addReserves(dataBaseWriter, returnedId, amount);
         }
@@ -71,14 +75,15 @@ public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private long insertData(SQLiteDatabase database, String amount, String description, int currency){
-        ContentValues values = new ContentValues();
+    private long insertData(String amount, String description, int currency){
+        HashMap<String, Object> values = new HashMap<>();
         values.put(AMOUNT, amount);
         values.put(DESCRIPTION, description);
         values.put(CURRENCY, currency);
         values.put(DATE, getDate());
-        String table = getTable();
-        return validateInsertion(database.insert(table, NO_NULL_COLUMNS, values));
+
+        IBaseModel model = isEntry ? new Entry(values) : new Expenditure(values);
+        return model.save(this) ? (long)model.get("id") : -1;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -96,11 +101,10 @@ public class AddEntry extends AppCompatActivity implements IDataBaseConnection {
         return isEntry ? ENTRY_TABLE : EXPENDITURE_TABLE;
     }
 
-    private long validateInsertion(long returnedId){
+    private void validateInsertion(long returnedId){
         if(returnedId == NO_INSERTION){
             Toast.makeText(this, INSERTION_FAILED_MESSAGE, Toast.LENGTH_SHORT).show();
         }
-        return returnedId;
     }
 
     private void addReserves(SQLiteDatabase database, long entry, String amount){

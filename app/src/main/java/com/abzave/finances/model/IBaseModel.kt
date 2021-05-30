@@ -173,7 +173,7 @@ abstract class IBaseModelStatic: IDataBaseConnection {
                 Cursor.FIELD_TYPE_BLOB -> hash[name] = cursor.getBlob(column)
                 Cursor.FIELD_TYPE_FLOAT -> hash[name] = cursor.getFloat(column)
                 Cursor.FIELD_TYPE_INTEGER -> hash[name] = cursor.getInt(column)
-                Cursor.FIELD_TYPE_STRING -> hash.put(name, cursor.getString(column))
+                Cursor.FIELD_TYPE_STRING -> hash[name] = cursor.getString(column)
             }
         }
         return hash
@@ -228,18 +228,29 @@ abstract class IBaseModel : IDataBaseConnection, Freezable<IBaseModel> {
     abstract val primaryKey: String
     private val latestChanges: HashMap<String, Any?> = hashMapOf()
 
-    fun save(context: Context) {
+    fun save(context: Context): Boolean {
         if (this.isFrozen) {
             this.deleteOnSave(context)
-            return
+            return false
         }
 
         val database = getDataBaseWriter(context)
-        val contentValues = columnsToValues(this.latestChanges)
         val whereCondition = "$primaryKey = ?"
-        val whereValue = arrayOf(this.columns[this.primaryKey] as String)
+        val whereValue = arrayOf(if (this.columns[this.primaryKey] != null) this.columns[this.primaryKey].toString() else "NULL")
+        val contentValues = columnsToValues(if (this.latestChanges.isNotEmpty()) this.latestChanges else this.columns)
 
-        database.update(this.tableName, contentValues, whereCondition, whereValue)
+        val cursor = database.rawQuery("SELECT $primaryKey FROM $tableName WHERE $whereCondition", whereValue)
+        val exists = cursor.moveToFirst()
+        cursor.close()
+        return if(exists) {
+            val rows = database.update(this.tableName, contentValues, whereCondition, whereValue)
+            rows > 0
+        } else {
+            val id = database.insert(this.tableName, IDataBaseConnection.NO_NULL_COLUMNS, contentValues)
+            val success = id != (-1).toLong()
+            this.columns[this.primaryKey] = if (success) id else null
+            success
+        }
     }
 
     fun update(values: HashMap<String, Any?>){
@@ -319,6 +330,22 @@ abstract class IBaseModel : IDataBaseConnection, Freezable<IBaseModel> {
         }
 
         return values
+    }
+
+    protected fun columnsFromCursor(cursor: Cursor): HashMap<String, Any?> {
+        val hash = hashMapOf<String, Any?>()
+        for (column in 0 until cursor.columnCount) {
+            val name = cursor.getColumnName(column)
+
+            when (cursor.getType(column)) {
+                Cursor.FIELD_TYPE_NULL -> hash[name] = null
+                Cursor.FIELD_TYPE_BLOB -> hash[name] = cursor.getBlob(column)
+                Cursor.FIELD_TYPE_FLOAT -> hash[name] = cursor.getFloat(column)
+                Cursor.FIELD_TYPE_INTEGER -> hash[name] = cursor.getInt(column)
+                Cursor.FIELD_TYPE_STRING -> hash.put(name, cursor.getString(column))
+            }
+        }
+        return hash
     }
 
     private fun deleteOnSave(context: Context) {

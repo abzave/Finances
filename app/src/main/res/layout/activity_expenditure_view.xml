@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#111A23"
+    android:background="@drawable/background"
     tools:context=".activity.ExpenditureView">
 
     <ScrollView
@@ -22,13 +22,33 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/baseLabel"
+            <LinearLayout
+                android:id="@+id/baseLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/description_input"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/baseLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description_input"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="44dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:background="@android:drawable/ic_menu_edit" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

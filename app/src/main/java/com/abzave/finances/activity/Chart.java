@@ -36,7 +36,6 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.StringJoiner;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import kotlin.Pair;
 
@@ -149,8 +148,6 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
     }
 
     private ArrayList<ArrayList<Object>> getDataPie(String currency, ArrayList<String> descriptions){
-        SQLiteDatabase database = getDataBaseReader(this);
-
         Pair<String, ?> currencyQuery = new Pair<>("type", currency);
         ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
         if (types.isEmpty()){
@@ -159,43 +156,29 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
         ArrayList<ArrayList<Object>> data = new ArrayList<>();
         String currencyId = String.valueOf(types.get(0).get("id"));
-        if (context == ENTRIES_CONTEXT) {
-            String[] whereValues = {currencyId};
-            String query = getContextQueryPie();
-            query += " " + parseArrayListToSqlList(descriptions) + " " + GROUP_BY_DESCRIPTION;
-            Cursor cursor = database.rawQuery(query, whereValues);
 
-            cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
-                ArrayList<Object> row = new ArrayList<>();
-
-                row.add(cursor.getFloat(SUM_COLUMN));
-                row.add(cursor.getString(DESCRIPTION_COLUMN_IN_SUM));
-                data.add(row);
-
-                cursor.moveToNext();
-            }
-            cursor.close();
+        String condition = String.format("currency = %s AND description IN %s", currencyId, parseArrayListToSqlList(descriptions));
+        QueryModel query;
+        if(context == ENTRIES_CONTEXT) {
+            query = Expenditure.Companion.select("SUM(amount), description").where(condition).group("description");
         } else {
-            String condition = String.format("currency = %s AND description IN %s", currencyId, parseArrayListToSqlList(descriptions));
-            QueryModel query = Expenditure.Companion.select("SUM(amount), description").where(condition).group("description");
+            query = com.abzave.finances.model.Entry.Companion.select("SUM(amount), description").where(condition).group("description");
+        }
 
-            ArrayList<Object> amountSums = query.get(this, "amount");
-            ArrayList<Object> descriptionsGot = query.get(this, "description");
+        ArrayList<Object> amountSums = query.get(this, "amount");
+        ArrayList<Object> descriptionsGot = query.get(this, "description");
 
-            for (int elementIndex = 0; elementIndex < amountSums.size(); elementIndex++) {
-                ArrayList<Object> row = new ArrayList<>();
+        for (int elementIndex = 0; elementIndex < amountSums.size(); elementIndex++) {
+            ArrayList<Object> row = new ArrayList<>();
 
-                row.add(amountSums.get(elementIndex));
-                row.add(descriptionsGot.get(elementIndex));
-                data.add(row);
-            }
+            row.add(amountSums.get(elementIndex));
+            row.add(descriptionsGot.get(elementIndex));
+            data.add(row);
         }
         return data;
     }
 
     private ArrayList<ArrayList<Object>> getDataLine(String currency, ArrayList<String> descriptions){
-        SQLiteDatabase database = getDataBaseReader(this);
 
         Pair<String, ?> currencyQuery = new Pair<>("type", currency);
         ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
@@ -205,61 +188,33 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
         ArrayList<ArrayList<Object>> data = new ArrayList<>();
         String currencyId = String.valueOf(types.get(0).get("id"));
+
+        String selection = "SUM(amount), description, strftime('%Y-%m',date)";
+        String condition = String.format("currency = %s AND description IN %s", currencyId, parseArrayListToSqlList(descriptions));
+        String group = "strftime('%Y-%m',REPLACE(date,'/','-'))";
+        QueryModel query;
         if (context == ENTRIES_CONTEXT) {
-            String[] whereValues = {currencyId};
-            String query = getContextQueryLine();
-            query += " " + parseArrayListToSqlList(descriptions) + " " + GROUP_BY_DATE;
-
-            Cursor cursor = database.rawQuery(query, whereValues);
-
-            cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
-                ArrayList<Object> row = new ArrayList<>();
-
-                row.add(cursor.getFloat(SUM_COLUMN));
-                row.add(cursor.getString(DESCRIPTION_COLUMN_IN_SUM));
-                row.add(cursor.getString(DATE_COLUMN) != null ? cursor.getString(DATE_COLUMN) : "");
-                data.add(row);
-
-                cursor.moveToNext();
-            }
-            cursor.close();
+            query = Expenditure.Companion.select(selection).where(condition).group(group);
         } else {
-            String selection = "SUM(amount), description, strftime('%Y-%m',date)";
-            String condition = String.format("currency = %s AND description IN %s", currencyId, parseArrayListToSqlList(descriptions));
-            String group = "strftime('%Y-%m',REPLACE(date,'/','-'))";
-            QueryModel query = Expenditure.Companion.select(selection).where(condition).group(group);
+            query = com.abzave.finances.model.Entry.Companion.select(selection).where(condition).group(group);
+        }
 
-            ArrayList<Object> amountSums = query.get(this, "amount");
-            ArrayList<Object> descriptionsGot = query.get(this, "description");
-            ArrayList<Object> dates = query.get(this, "date");
+        ArrayList<Object> amountSums = query.get(this, "amount");
+        ArrayList<Object> descriptionsGot = query.get(this, "description");
+        ArrayList<Object> dates = query.get(this, "date");
 
-            for (int elementIndex = 0; elementIndex < amountSums.size(); elementIndex++) {
-                ArrayList<Object> row = new ArrayList<>();
+        for (int elementIndex = 0; elementIndex < amountSums.size(); elementIndex++) {
+            ArrayList<Object> row = new ArrayList<>();
 
-                row.add(amountSums.get(elementIndex));
-                row.add(descriptionsGot.get(elementIndex));
-                row.add(dates.get(elementIndex));
-                data.add(row);
-            }
+            row.add(amountSums.get(elementIndex));
+            row.add(descriptionsGot.get(elementIndex));
+            row.add(dates.get(elementIndex));
+            data.add(row);
         }
         return data;
     }
 
-    private String getContextQueryPie(){
-        return SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION;
-    }
-
-    private String getContextQueryLine(){
-        return SUM_OF_ENTRIES_QUERY_BY_DESCRIPTION_AND_DATE;
-    }
-
-    private String getDescriptionQueryByContext(){
-        return  ALL_ENTIRES_DESCRIPTIONS_FOR_CURRENCY;
-    }
-
     private ArrayList<String> getAllDescriptionsByCurrency(String currency){
-        SQLiteDatabase database = getDataBaseReader(this);
 
         Pair<String, ?> currencyQuery = new Pair<>("type", currency);
         ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
@@ -269,28 +224,17 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
         String currencyId = String.valueOf((Integer) types.get(0).get("id"));
         ArrayList<String> descriptions = new ArrayList<>();
+        QueryModel query;
+
+        String condition = "currency = " + currencyId;
         if (context == ENTRIES_CONTEXT) {
-            String[] whereValues = {currencyId};
-            Cursor data = database.rawQuery(getDescriptionQueryByContext(), whereValues);
-
-            if (!data.moveToFirst()){
-                Toast.makeText(this, NO_REGISTERS_MESSAGE, Toast.LENGTH_SHORT).show();
-                return descriptions;
-            }
-            while (!data.isAfterLast()){
-                descriptions.add(data.getString(DESCRIPTION_COLUMN));
-                data.moveToNext();
-            }
-            data.close();
+            query = Expenditure.Companion.select("description").where(condition).group("description");
         } else {
-            String condition = "currency = " + currencyId;
-            QueryModel query = Expenditure.Companion.select("description").where(condition).group("description");
-
-            ArrayList<Object> records = query.get(this, "description");
-            records.forEach(row -> {
-                descriptions.add((String) row);
-            });
+            query = com.abzave.finances.model.Entry.Companion.select("description").where(condition).group("description");
         }
+
+        ArrayList<Object> records = query.get(this, "description");
+        records.forEach(row -> descriptions.add((String) row));
         return descriptions;
     }
 

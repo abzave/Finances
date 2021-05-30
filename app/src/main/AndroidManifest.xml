@@ -17,6 +17,7 @@
         <activity android:name=".activity.Stadistics" android:configChanges="orientation|screenSize"/>
         <activity android:name=".activity.ExpenditureView" android:configChanges="orientation|screenSize"/>
         <activity android:name=".activity.AddEntry" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".activity.EditRecordActivity" android:configChanges="orientation|screenSize"/>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

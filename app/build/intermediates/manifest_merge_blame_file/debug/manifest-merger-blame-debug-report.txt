@@ -18,11 +18,11 @@
 12-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:6:22-77
 13
 14    <application
-14-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:8:5-27:19
+14-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:8:5-28:19
 15        android:allowBackup="true"
 15-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:9:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.5.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\4d4c251c4a3c979ed7ca5d62bc38a4cf\core-1.5.0-beta01\AndroidManifest.xml:24:18-86
+16-->[androidx.core:core:1.6.0-beta01] C:\Users\Abraham\.gradle\caches\transforms-2\files-2.1\3468b436c5fe3117adb538a7c1d388a6\core-1.6.0-beta01\AndroidManifest.xml:24:18-86
 17        android:debuggable="true"
 18        android:icon="@mipmap/ic_launcher"
 18-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:10:9-43
@@ -32,53 +32,58 @@
 20-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:12:9-54
 21        android:supportsRtl="true"
 21-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:13:9-35
-22        android:testOnly="true"
-23        android:theme="@style/AppTheme" >
-23-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:14:9-40
-24        <activity
-24-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:15:9-108
-25            android:name="com.abzave.finances.activity.Chart"
-25-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:15:19-49
-26            android:configChanges="orientation|screenSize" />
-26-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:15:50-96
-27        <activity
-27-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:16:9-104
-28            android:name="com.abzave.finances.activity.TotalAmount"
-28-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:16:19-55
-29            android:configChanges="orientation|screenSize" />
-29-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:16:56-102
-30        <activity
-30-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:17:9-103
-31            android:name="com.abzave.finances.activity.Stadistics"
-31-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:17:19-54
-32            android:configChanges="orientation|screenSize" />
-32-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:17:55-101
-33        <activity
-33-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:18:9-108
-34            android:name="com.abzave.finances.activity.ExpenditureView"
-34-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:18:19-59
-35            android:configChanges="orientation|screenSize" />
-35-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:18:60-106
-36        <activity
-36-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:19:9-101
-37            android:name="com.abzave.finances.activity.AddEntry"
-37-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:19:19-52
-38            android:configChanges="orientation|screenSize" />
-38-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:19:53-99
-39        <activity android:name="com.abzave.finances.activity.MainActivity" >
-39-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:20:9-26:20
-39-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:20:19-56
-40            <intent-filter>
-40-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:21:13-25:29
-41                <action android:name="android.intent.action.MAIN" />
-41-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:22:17-69
-41-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:22:25-66
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:24:17-77
-43-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:24:27-74
-44            </intent-filter>
-45        </activity>
-46    </application>
-47
-48</manifest>
+22        android:theme="@style/AppTheme" >
+22-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:14:9-40
+23        <activity
+23-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:15:9-108
+24            android:name="com.abzave.finances.activity.Chart"
+24-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:15:19-49
+25            android:configChanges="orientation|screenSize" />
+25-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:15:50-96
+26        <activity
+26-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:16:9-104
+27            android:name="com.abzave.finances.activity.TotalAmount"
+27-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:16:19-55
+28            android:configChanges="orientation|screenSize" />
+28-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:16:56-102
+29        <activity
+29-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:17:9-103
+30            android:name="com.abzave.finances.activity.Stadistics"
+30-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:17:19-54
+31            android:configChanges="orientation|screenSize" />
+31-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:17:55-101
+32        <activity
+32-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:18:9-108
+33            android:name="com.abzave.finances.activity.ExpenditureView"
+33-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:18:19-59
+34            android:configChanges="orientation|screenSize" />
+34-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:18:60-106
+35        <activity
+35-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:19:9-101
+36            android:name="com.abzave.finances.activity.AddEntry"
+36-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:19:19-52
+37            android:configChanges="orientation|screenSize" />
+37-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:19:53-99
+38        <activity
+38-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:20:9-111
+39            android:name="com.abzave.finances.activity.EditRecordActivity"
+39-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:20:19-62
+40            android:configChanges="orientation|screenSize" />
+40-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:20:63-109
+41        <activity android:name="com.abzave.finances.activity.MainActivity" >
+41-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:21:9-27:20
+41-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:21:19-56
+42            <intent-filter>
+42-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:22:13-26:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:23:17-69
+43-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:23:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:25:17-77
+45-->D:\Documentos\AndroidStudioProjects\Finances\app\src\main\AndroidManifest.xml:25:27-74
+46            </intent-filter>
+47        </activity>
+48    </application>
+49
+50</manifest>

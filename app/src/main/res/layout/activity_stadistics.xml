@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#111A23"
+    android:background="@drawable/background"
     tools:context=".activity.Stadistics">
 
     <Button
@@ -17,7 +17,7 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="102dp"
-        android:background="#0F121B"
+        android:background="@drawable/button_background"
         android:onClick="goToRemainingView"
         android:text="@string/remaining_button"
         android:textColor="#87868B" />
@@ -32,7 +32,7 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="102dp"
-        android:background="#0F121B"
+        android:background="@drawable/button_background"
         android:onClick="goToExpendituresChart"
         android:text="@string/expenditures_graphic_button"
         android:textColor="#87868B" />
@@ -47,7 +47,7 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="102dp"
-        android:background="#0F121B"
+        android:background="@drawable/button_background"
         android:onClick="goToAmountView"
         android:text="@string/total_button"
         android:textColor="#87868B" />
@@ -62,7 +62,7 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="102dp"
-        android:background="#0F121B"
+        android:background="@drawable/button_background"
         android:onClick="goToRetirementView"
         android:text="@string/retirement_button"
         android:textColor="#87868B" />
@@ -77,7 +77,7 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="102dp"
-        android:background="#0F121B"
+        android:background="@drawable/button_background"
         android:onClick="goToEmegenciesView"
         android:text="@string/emergencies_button"
         android:textColor="#87868B" />
@@ -92,7 +92,7 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="102dp"
-        android:background="#0F121B"
+        android:background="@drawable/button_background"
         android:onClick="goToWhimsView"
         android:text="@string/whims_button"
         android:textColor="#87868B" />
@@ -107,7 +107,7 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="102dp"
-        android:background="#0F121B"
+        android:background="@drawable/button_background"
         android:onClick="goToEntriesChart"
         android:text="@string/entries_graphic_button"
         android:textColor="#87868B" />
@@ -122,7 +122,7 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="102dp"
-        android:background="#0F121B"
+        android:background="@drawable/button_background"
         android:onClick="goToExpendedView"
         android:text="@string/expended_button"
         android:textColor="#87868B" />

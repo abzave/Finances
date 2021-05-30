@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.abzave.finances.R;
+import com.abzave.finances.model.Entry;
 import com.abzave.finances.model.Expenditure;
+import com.abzave.finances.model.IBaseModel;
 import com.abzave.finances.model.QueryModel;
 import com.abzave.finances.model.database.IDataBaseConnection;
 
@@ -53,34 +55,41 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
         QueryModel expendituresQuery = Expenditure.Companion.sum(columns).group("currency");
         ArrayList<Float> expenditures = expendituresQuery.get(this, "amount");
 
-        Cursor entriesCursor = dataBaseReader.rawQuery(SUM_OF_ENTRIES_QUERY, NO_SELECTION_ARGUMENTS);
-        setLabels(entriesCursor, expenditures);
-        entriesCursor.close();
+        QueryModel entryQuery = Entry.Companion.sum(columns).group("currency");
+        ArrayList<Float> entries = entryQuery.get(this, "amount");
+
+        setLabels(entries, expenditures);
     }
 
     private void requestData(SQLiteDatabase dataBaseReader){
-        Cursor cursor = null;
         ArrayList<Float> expenditures = new ArrayList<>();
+        ArrayList<Float> entries = new ArrayList<>();
         if (context == EXPENDED_CONTEXT) {
             ArrayList<String> columns = new ArrayList<>();
             columns.add("amount");
 
             QueryModel expendituresQuery = Expenditure.Companion.sum(columns).group("currency");
             expenditures = expendituresQuery.get(this, "amount");
+        } else if (context == TOTAL_AMOUNT_CONTEXT) {
+            ArrayList<String> columns = new ArrayList<>();
+            columns.add("amount");
 
+            QueryModel expendituresQuery = Entry.Companion.sum(columns).group("currency");
+            entries = expendituresQuery.get(this, "amount");
         } else {
-            cursor = dataBaseReader.rawQuery(getContextQuery(), getContextParameters(dataBaseReader));
-        }
-        setLabels(cursor, expenditures);
-        if (cursor != null) {
+            Cursor cursor = dataBaseReader.rawQuery(getContextQuery(), getContextParameters(dataBaseReader));
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                entries.add(cursor.getFloat(AMOUNT_COLUMN));
+                cursor.moveToNext();
+            }
             cursor.close();
         }
+        setLabels(entries, expenditures);
     }
 
     private String getContextQuery(){
         switch (context){
-            case TOTAL_AMOUNT_CONTEXT:
-                return SUM_OF_ENTRIES_QUERY;
             case RETIREMENT_CONTEXT:
             case EMERGENCIES_CONTEXT:
             case WHIMS_CONTEXT:
@@ -109,19 +118,11 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
     }
 
     @SuppressLint("DefaultLocale")
-    private void setLabels(Cursor entriesCursor, ArrayList<Float> expenditures){
-        Cursor entry = entriesCursor != null && entriesCursor.moveToFirst() ? entriesCursor : null;
-        ArrayList<Float> expenditure = !expenditures.isEmpty() ? expenditures : null;
-
-        float difference = getDifference(entry, expenditure);
+    private void setLabels(ArrayList<Float> entries, ArrayList<Float> expenditures){
+        float difference = getDifference(entries, expenditures);
         colonesAmountLabel.setText(String.format(MONEY_FORMAT, difference));
-        entry = entry != null && entriesCursor.moveToNext() ? entriesCursor : null;
-        difference = getDifference(entry, expenditure);
+        difference = getDifference(entries, expenditures);
         dollarsAmountLabel.setText(String.format(MONEY_FORMAT, difference));
-    }
-
-    private Float getCursorValue(Cursor cursor){
-        return cursor != null ? cursor.getFloat(SUM_COLUMN) : 0;
     }
 
     private Float popListValue(ArrayList<Float> list){
@@ -135,8 +136,8 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
         return value;
     }
 
-    private float getDifference(Cursor entriesCursor, ArrayList<Float> expendituresList){
-        float entries = getCursorValue(entriesCursor);
+    private float getDifference(ArrayList<Float> entriesCursor, ArrayList<Float> expendituresList){
+        float entries = popListValue(entriesCursor);
         float expenditures = popListValue(expendituresList);
         return entries - expenditures;
     }
