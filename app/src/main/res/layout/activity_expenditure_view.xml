@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:textAlignment="center"
     tools:context=".activity.ExpenditureView">
 
     <ScrollView
@@ -25,7 +26,7 @@
             <LinearLayout
                 android:id="@+id/baseLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
@@ -33,6 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/description_input"
+                    android:textAlignment="viewStart"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
@@ -50,6 +52,58 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/page_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/begin_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:onClick="goToBegin"
+                    android:text="@string/go_to_begin"
+                    android:textColor="#C7C5CF"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/previous_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:onClick="previousPage"
+                    android:text="@string/previous"
+                    android:textColor="#C7C5CF"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/next_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:onClick="nextPage"
+                    android:text="@string/next"
+                    android:textColor="#C7C5CF"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/end_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:onClick="goToEnd"
+                    android:text="@string/go_to_end"
+                    android:textColor="#C7C5CF"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,12 +15,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="102dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="102dp"
         android:background="@drawable/button_background"
         android:onClick="goToRemainingView"
         android:text="@string/remaining_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
     <Button
         android:id="@+id/expenditureChartButton"
@@ -30,12 +30,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="102dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="102dp"
         android:background="@drawable/button_background"
         android:onClick="goToExpendituresChart"
         android:text="@string/expenditures_graphic_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
     <Button
         android:id="@+id/totalAmountButton"
@@ -45,72 +45,27 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="102dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="102dp"
         android:background="@drawable/button_background"
         android:onClick="goToAmountView"
         android:text="@string/total_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
     <Button
-        android:id="@+id/retairedmentAmountButton"
+        android:id="@+id/EntriesChartsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/remainingAmountButton"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="102dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="102dp"
-        android:background="@drawable/button_background"
-        android:onClick="goToRetirementView"
-        android:text="@string/retirement_button"
-        android:textColor="#87868B" />
-
-    <Button
-        android:id="@+id/emergencyAmountButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/retairedmentAmountButton"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="102dp"
-        android:background="@drawable/button_background"
-        android:onClick="goToEmegenciesView"
-        android:text="@string/emergencies_button"
-        android:textColor="#87868B" />
-
-    <Button
-        android:id="@+id/whimsAmountButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/emergencyAmountButton"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="102dp"
-        android:background="@drawable/button_background"
-        android:onClick="goToWhimsView"
-        android:text="@string/whims_button"
-        android:textColor="#87868B" />
-
-    <Button
-        android:id="@+id/EntriesChartsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/whimsAmountButton"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="102dp"
         android:background="@drawable/button_background"
         android:onClick="goToEntriesChart"
         android:text="@string/entries_graphic_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
     <Button
         android:id="@+id/expendedAmountButton"
@@ -120,11 +75,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="102dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="102dp"
         android:background="@drawable/button_background"
         android:onClick="goToExpendedView"
         android:text="@string/expended_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
 </RelativeLayout>

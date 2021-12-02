@@ -57,7 +57,7 @@
                 android:background="@drawable/button_background"
                 android:onClick="add"
                 android:text="@string/add_button"
-                android:textColor="#87868B"
+                android:textColor="#C7C5CF"
                 android:textColorHint="#4B4F58"
                 android:textSize="24sp" />
         </TableRow>

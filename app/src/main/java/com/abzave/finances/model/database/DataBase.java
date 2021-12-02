@@ -4,8 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.abzave.finances.model.CurrencyType;
-
 public class DataBase extends SQLiteOpenHelper implements IDataBaseConnection{
 
 
@@ -23,16 +21,11 @@ public class DataBase extends SQLiteOpenHelper implements IDataBaseConnection{
         database.execSQL(CREATE_CURRENCY_TYPE_TABLE);
         database.execSQL(CREATE_EXPENDITURE_TABLE);
         database.execSQL(CREATE_ENTRY_TABLE);
-        database.execSQL(CREATE_RESERVE_TYPE_TABLE);
-        database.execSQL(CREATE_RESERVE_TABLE);
     }
 
     private void insertValues(SQLiteDatabase database){
         database.execSQL(INSERT_COLONES_TYPE);
         database.execSQL(INSERT_DOLLARS_TYPE);
-        database.execSQL(INSERT_RETIREMENT_TYPE);
-        database.execSQL(INSERT_EMERGENCIES_TYPE);
-        database.execSQL(INSERT_WHIMS_TYPE);
     }
 
     @Override

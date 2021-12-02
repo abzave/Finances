@@ -10,28 +10,46 @@ class QueryModel(private val table: String): IDataBaseConnection {
     private var conditions: String = ""
     private var groups: String = ""
     private var joins: String = ""
+    private var limitValue: Int = -1
+    private var offsetValue: Int = -1
 
     fun select(selection: String): QueryModel {
         selections += getNewData(selections, selection, ", ")
-
         return this
     }
 
     fun where(condition: String): QueryModel {
         conditions += getNewData(conditions, condition, " AND ")
-
         return this
     }
 
     fun group(by: String): QueryModel {
         groups += getNewData(groups, by, ", ")
-
         return this
     }
 
     fun join(type: String): QueryModel {
         joins += getNewData(joins, type, " ")
+        return this
+    }
 
+    /**
+     * Adds a limit instruction to the currently stored query
+     * @param value number of records to retrieve
+     * @return current object so we can concatenate methods
+     */
+    fun limit(value: Int): QueryModel {
+        limitValue = value
+        return this
+    }
+
+    /**
+     * Adds a offset instruction to the currently stored query
+     * @param value number of records to skip
+     * @return current object so we can concatenate methods
+     */
+    fun offset(value: Int): QueryModel {
+        offsetValue = value
         return this
     }
 
@@ -62,13 +80,19 @@ class QueryModel(private val table: String): IDataBaseConnection {
         var query = "SELECT $selections FROM $table "
 
         if (joins.isNotEmpty()) {
-            query += joins
+            query += "$joins "
         }
         if (conditions.isNotEmpty()) {
             query += "WHERE $conditions "
         }
         if (groups.isNotEmpty()) {
             query += "GROUP BY $groups "
+        }
+        if (limitValue > 0) {
+            query += "LIMIT $limitValue "
+        }
+        if (offsetValue > 0) {
+            query += "OFFSET $offsetValue "
         }
 
         return query

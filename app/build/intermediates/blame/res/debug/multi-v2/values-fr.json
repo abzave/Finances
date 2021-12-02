@@ -4,7 +4,7 @@
             "outputFile": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fr\\values-fr.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\values-fr\\values-fr.xml",
+                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\values-fr\\values-fr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -18,6 +18,23 @@
                         "startOffsets": "2945",
                         "endColumns": "100",
                         "endOffsets": "3041"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\values-fr\\values-fr.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,171",
+                        "endColumns": "115,120",
+                        "endOffsets": "166,287"
+                    },
+                    "to": {
+                        "startLines": "31,32",
+                        "startColumns": "4,4",
+                        "startOffsets": "3046,3162",
+                        "endColumns": "115,120",
+                        "endOffsets": "3157,3278"
                     }
                 },
                 {

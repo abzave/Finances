@@ -4,7 +4,24 @@
             "outputFile": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lo\\values-lo.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\values-lo\\values-lo.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,160",
+                        "endColumns": "104,110",
+                        "endOffsets": "155,266"
+                    },
+                    "to": {
+                        "startLines": "31,32",
+                        "startColumns": "4,4",
+                        "startOffsets": "2937,3042",
+                        "endColumns": "104,110",
+                        "endOffsets": "3037,3148"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

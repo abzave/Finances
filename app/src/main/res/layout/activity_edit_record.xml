@@ -178,7 +178,7 @@
                 android:background="@drawable/button_background"
                 android:onClick="saveData"
                 android:text="@string/save"
-                android:textColor="#87868B"
+                android:textColor="#C7C5CF"
                 android:textColorHint="#4B4F58"
                 android:textSize="24sp" />
         </TableRow>

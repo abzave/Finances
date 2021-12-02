@@ -4,6 +4,25 @@
             "outputFile": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "929"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "347",
+                        "endLines": "16",
+                        "endColumns": "12",
+                        "endOffsets": "1221"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",

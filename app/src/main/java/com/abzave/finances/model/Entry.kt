@@ -33,27 +33,27 @@ class Entry(values: HashMap<String, Any?>) : IBaseModel() {
         override val tableName: String = "Entry"
         override val primaryKey: String = "id"
 
-        fun find(context: Context, findValue: Any): ArrayList<Expenditure> {
+        fun find(context: Context, findValue: Any): ArrayList<Entry> {
             return findGeneric(context, findValue)
         }
 
-        fun all(context: Context): ArrayList<Expenditure> {
+        fun all(context: Context): ArrayList<Entry> {
             return allGeneric(context)
         }
 
-        fun findOne(context: Context, findValue: Any): Expenditure {
+        fun findOne(context: Context, findValue: Any): Entry {
             return findOneGeneric(context, findValue)
         }
 
-        fun first(context: Context): Expenditure {
+        fun first(context: Context): Entry {
             return firstGeneric(context)
         }
 
-        fun findBy(context: Context, findValue: Pair<String, Any?>): ArrayList<Expenditure> {
+        fun findBy(context: Context, findValue: Pair<String, Any?>): ArrayList<Entry> {
             return findByGeneric(context, findValue)
         }
 
-        fun where(context: Context, whereValue: HashMap<String, Any?>): ArrayList<Expenditure> {
+        fun where(context: Context, whereValue: HashMap<String, Any?>): ArrayList<Entry> {
             return whereGeneric(context, whereValue)
         }
     }

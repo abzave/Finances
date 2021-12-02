@@ -4,12 +4,12 @@
         "source": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -56,6 +56,10 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_open_on_phone_arrow_animation.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\open_on_phone_arrow_animation.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -72,8 +76,16 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-ldrtl-xhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_generic_confirmation_icon_animation.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\generic_confirmation_icon_animation.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ws_switch_thumb_mtrl_15w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-hdpi-v4\\ws_switch_thumb_mtrl_15w.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -85,11 +97,15 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action_tombstone.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\layout-v21\\notification_action_tombstone.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_navigation_drawer_item_view.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_navigation_drawer_item_view.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
@@ -104,16 +120,20 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_dark.9.png"
-    },
-    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_add_entry.xml.flat",
         "source": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\src\\main\\res\\layout\\activity_add_entry.xml"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_single_page_nav_drawer_peek_view.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_single_page_nav_drawer_peek_view.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_search_api_material.xml.flat",
@@ -124,12 +144,20 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ws_switch_thumb_mtrl_16w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xhdpi-v4\\ws_switch_thumb_mtrl_16w.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_action_drawer_title_view.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_action_drawer_title_view.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -160,12 +188,24 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ws_switch_thumb_material_anim.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\ws_switch_thumb_material_anim.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ws_switch_thumb_mtrl_18w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xhdpi-v4\\ws_switch_thumb_mtrl_18w.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_tick_mark_material.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ws_action_item_background.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\ws_action_item_background.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -176,12 +216,12 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_btn_colored_material.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background.xml.flat",
@@ -192,12 +232,16 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_single_page_nav_drawer_text.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_single_page_nav_drawer_text.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -208,16 +252,20 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_action_drawer_item_view.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_action_drawer_item_view.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_stadistics.xml.flat",
         "source": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\src\\main\\res\\layout\\activity_stadistics.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
@@ -242,6 +290,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_single_page_nav_drawer_6_item.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_single_page_nav_drawer_6_item.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple_overlay_action_mode.xml.flat",
@@ -308,6 +360,10 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ws_switch_track_mtrl.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-hdpi-v4\\ws_switch_track_mtrl.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_dark.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
@@ -344,12 +400,20 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_navigation_drawer_view.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_navigation_drawer_view.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ws_full_sad.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xhdpi-v4\\ws_full_sad.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -361,7 +425,7 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\layout\\notification_template_part_time.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chart.xml.flat",
@@ -385,7 +449,7 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_custom_dialog.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\layout\\custom_dialog.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\layout\\custom_dialog.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_total_amount.xml.flat",
@@ -406,6 +470,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ws_switch_thumb_mtrl_14w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xhdpi-v4\\ws_switch_thumb_mtrl_14w.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -476,6 +544,10 @@
         "source": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\src\\main\\res\\drawable\\button_background.xml"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ws_switch_thumb_mtrl_17w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-hdpi-v4\\ws_switch_thumb_mtrl_17w.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_menu_overflow_material.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
@@ -501,7 +573,7 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_spinner.xml.flat",
@@ -528,12 +600,12 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -573,7 +645,11 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable\\notification_bg_low.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ws_switch_thumb_mtrl_17w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xxhdpi-v4\\ws_switch_thumb_mtrl_17w.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -605,7 +681,11 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_icon_background.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable\\notification_icon_background.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ws_switch_thumb_mtrl_15w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xhdpi-v4\\ws_switch_thumb_mtrl_15w.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -648,8 +728,16 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color_ws_switch_thumb_color_material.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\color\\ws_switch_thumb_color_material.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ws_ic_more_horiz_24dp_wht.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\ws_ic_more_horiz_24dp_wht.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -658,6 +746,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ws_ic_expand_more_white_22.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\ws_ic_expand_more_white_22.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_header_item_layout.xml.flat",
@@ -676,12 +768,16 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_single_page_nav_drawer_7_item.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_single_page_nav_drawer_7_item.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-watch-v20_abc_dialog_material_background.xml.flat",
@@ -696,8 +792,12 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_open_on_phone.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\open_on_phone.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
@@ -713,7 +813,7 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
@@ -721,7 +821,7 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-v21\\notification_action_background.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -742,6 +842,14 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_action_drawer_peek_view.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_action_drawer_peek_view.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_open_on_phone_path_2_animation.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\open_on_phone_path_2_animation.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -769,11 +877,15 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_overlay_confirmation.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_overlay_confirmation.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -793,11 +905,11 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\layout\\notification_template_part_chronometer.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\layout-v21\\notification_action.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\layout-v21\\notification_action.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -836,6 +948,10 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ws_switch_track_mtrl.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xhdpi-v4\\ws_switch_track_mtrl.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
     },
@@ -852,8 +968,12 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_generic_confirmation.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\generic_confirmation.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_icon_group.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\layout-v21\\notification_template_icon_group.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -884,12 +1004,12 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_borderless_text_material.xml.flat",
@@ -898,6 +1018,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_single_page_nav_drawer_1_item.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_single_page_nav_drawer_1_item.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_dark.xml.flat",
@@ -948,8 +1072,16 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\anim\\abc_tooltip_enter.xml"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_single_page_nav_drawer_3_item.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_single_page_nav_drawer_3_item.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ws_switch_thumb_mtrl_17w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xhdpi-v4\\ws_switch_thumb_mtrl_17w.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
@@ -961,7 +1093,7 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable\\notification_tile_bg.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable\\notification_tile_bg.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -978,6 +1110,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ws_ic_more_vert_24dp_wht.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\ws_ic_more_vert_24dp_wht.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_seek_thumb.xml.flat",
@@ -1004,8 +1140,16 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ws_switch_thumb_mtrl_14w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xxhdpi-v4\\ws_switch_thumb_mtrl_14w.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_exit.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\anim\\abc_tooltip_exit.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_generic_confirmation_animation.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\generic_confirmation_animation.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_select_dialog_material.xml.flat",
@@ -1041,31 +1185,39 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_generic_confirmation_animation_interpolator_3.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\generic_confirmation_animation_interpolator_3.xml"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ws_action_item_icon_background.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\ws_action_item_icon_background.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -1086,6 +1238,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ws_switch_thumb_mtrl_16w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-hdpi-v4\\ws_switch_thumb_mtrl_16w.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\menu_chart_overlow.xml.flat",
@@ -1124,6 +1280,14 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ws_switch_thumb_mtrl_14w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-hdpi-v4\\ws_switch_thumb_mtrl_14w.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_open_on_phone_animation_interpolator_1.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\open_on_phone_animation_interpolator_1.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
@@ -1132,8 +1296,12 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ws_switch_thumb_mtrl_18w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xxhdpi-v4\\ws_switch_thumb_mtrl_18w.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -1146,6 +1314,14 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_dropdown_item_icons_2line.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ws_ic_expand_less_white_22.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\ws_ic_expand_less_white_22.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_wearable_drawer_view.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_wearable_drawer_view.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_text_cursor_material.xml.flat",
@@ -1172,6 +1348,14 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_single_page_nav_drawer_2_item.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_single_page_nav_drawer_2_item.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ws_switch_thumb_mtrl_16w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xxhdpi-v4\\ws_switch_thumb_mtrl_16w.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_radio.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\layout\\abc_list_menu_item_radio.xml"
     },
@@ -1192,12 +1376,20 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_single_page_nav_drawer_5_item.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_single_page_nav_drawer_5_item.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_ab_back_material.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ws_switch_thumb_mtrl_18w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-hdpi-v4\\ws_switch_thumb_mtrl_18w.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -1233,15 +1425,15 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable\\notification_bg.xml"
-    },
-    {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_layout.xml.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\layout\\abc_list_menu_item_layout.xml"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable\\notification_bg.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_layout.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_light.xml.flat",
@@ -1272,6 +1464,10 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_generic_confirmation_animation.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\generic_confirmation_animation.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png"
     },
@@ -1298,6 +1494,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_generic_confirmation_animation_interpolator_0.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\generic_confirmation_animation_interpolator_0.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
@@ -1329,11 +1529,15 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_text_material.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\color-v23\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_open_on_phone_animation_interpolator_0.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\open_on_phone_animation_interpolator_0.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -1401,7 +1605,11 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_generic_confirmation_animation_interpolator_2.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\generic_confirmation_animation_interpolator_2.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_icon.xml.flat",
@@ -1430,6 +1638,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_light.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color_ws_switch_track_color_material.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\color\\ws_switch_track_color_material.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -1461,11 +1673,19 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_open_on_phone_path_1_animation.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\open_on_phone_path_1_animation.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ws_full_sad.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-hdpi-v4\\ws_full_sad.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_menu_layout.xml.flat",
@@ -1473,7 +1693,7 @@
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_menu_item_layout.xml.flat",
@@ -1482,6 +1702,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_multichoice_material.xml.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ws_switch_track_mtrl.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xxhdpi-v4\\ws_switch_track_mtrl.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_singlechoice_material.xml.flat",
@@ -1494,6 +1718,10 @@
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\layout_ws_single_page_nav_drawer_4_item.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\layout\\ws_single_page_nav_drawer_4_item.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
@@ -1524,12 +1752,20 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ws_open_on_phone_animation.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable\\ws_open_on_phone_animation.xml"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\anim_generic_confirmation_animation_interpolator_1.xml.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\anim\\generic_confirmation_animation_interpolator_1.xml"
     },
     {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -1552,15 +1788,19 @@
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
-        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
     },
     {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
         "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\372e4e0a5d988649676f2f5b47c49591\\appcompat-1.0.2\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Documentos\\AndroidStudioProjects\\Finances\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ws_switch_thumb_mtrl_15w.png.flat",
+        "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\drawable-xxhdpi-v4\\ws_switch_thumb_mtrl_15w.png"
     }
 ]

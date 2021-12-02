@@ -3,20 +3,16 @@ package com.abzave.finances.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.abzave.finances.R;
 import com.abzave.finances.model.Entry;
 import com.abzave.finances.model.Expenditure;
-import com.abzave.finances.model.IBaseModel;
 import com.abzave.finances.model.QueryModel;
 import com.abzave.finances.model.database.IDataBaseConnection;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class TotalAmount extends AppCompatActivity implements IDataBaseConnection {
 
@@ -29,6 +25,7 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_total_amount);
         context = getIntent().getShortExtra(CONTEXT, TOTAL_AMOUNT_CONTEXT);
+
         getViews();
         setAmounts();
     }
@@ -39,92 +36,72 @@ public class TotalAmount extends AppCompatActivity implements IDataBaseConnectio
     }
 
     private void setAmounts(){
-        SQLiteDatabase dataBaseReader = getDataBaseReader(this);
         if (context == REMAINING_CONTEXT){
-            requestDifference(dataBaseReader);
+            requestDifference();
         }else {
-            requestData(dataBaseReader);
+            requestData();
         }
-        dataBaseReader.close();
     }
 
-    private void requestDifference(SQLiteDatabase dataBaseReader){
+    /**
+     * Fetches all the entries and expenditures amount information
+     */
+    private void requestDifference(){
         ArrayList<String> columns = new ArrayList<>();
         columns.add("amount");
 
+        // Gets all the expenditures amount
         QueryModel expendituresQuery = Expenditure.Companion.sum(columns).group("currency");
         ArrayList<Float> expenditures = expendituresQuery.get(this, "amount");
 
+        // Gets all the entries amount
         QueryModel entryQuery = Entry.Companion.sum(columns).group("currency");
         ArrayList<Float> entries = entryQuery.get(this, "amount");
 
+        // Set the data into the UI
         setLabels(entries, expenditures);
     }
 
-    private void requestData(SQLiteDatabase dataBaseReader){
-        ArrayList<Float> expenditures = new ArrayList<>();
-        ArrayList<Float> entries = new ArrayList<>();
-        if (context == EXPENDED_CONTEXT) {
-            ArrayList<String> columns = new ArrayList<>();
-            columns.add("amount");
+    /**
+     * Fetches the required data based on the context
+     */
+    private void requestData(){
+        ArrayList<String> columns = new ArrayList<>();
+        columns.add("amount");
 
-            QueryModel expendituresQuery = Expenditure.Companion.sum(columns).group("currency");
-            expenditures = expendituresQuery.get(this, "amount");
-        } else if (context == TOTAL_AMOUNT_CONTEXT) {
-            ArrayList<String> columns = new ArrayList<>();
-            columns.add("amount");
+        // Fetches the records
+        QueryModel expendituresQuery = context == EXPENDED_CONTEXT
+                ? Expenditure.Companion.sum(columns).group("currency")
+                : Entry.Companion.sum(columns).group("currency");
 
-            QueryModel expendituresQuery = Entry.Companion.sum(columns).group("currency");
-            entries = expendituresQuery.get(this, "amount");
-        } else {
-            Cursor cursor = dataBaseReader.rawQuery(getContextQuery(), getContextParameters(dataBaseReader));
-            cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
-                entries.add(cursor.getFloat(AMOUNT_COLUMN));
-                cursor.moveToNext();
-            }
-            cursor.close();
-        }
+        // Sets the retrieved information if needed
+        ArrayList<Float> expenditures = context == EXPENDED_CONTEXT
+                ? expendituresQuery.get(this, "amount")
+                : new ArrayList<>();
+
+        // Sets the retrieved information if needed
+        ArrayList<Float> entries = context == TOTAL_AMOUNT_CONTEXT
+                ? expendituresQuery.get(this, "amount")
+                : new ArrayList<>();
+
+        // Set the data into the UI
         setLabels(entries, expenditures);
-    }
-
-    private String getContextQuery(){
-        switch (context){
-            case RETIREMENT_CONTEXT:
-            case EMERGENCIES_CONTEXT:
-            case WHIMS_CONTEXT:
-                return SUM_OF_RESERVE_QUERY;
-            default:
-                return null;
-        }
-    }
-
-    private String[] getContextParameters(SQLiteDatabase database){
-        String reserveType;
-        switch (context){
-            case RETIREMENT_CONTEXT:
-                reserveType = RETIREMENT;
-                break;
-            case EMERGENCIES_CONTEXT:
-                reserveType = EMERGENCIES;
-                break;
-            case WHIMS_CONTEXT:
-                reserveType = WHIMS;
-                break;
-            default:
-                return NO_SELECTION_ARGUMENTS;
-        }
-        return new String[]{Long.toString(getId(database, RESERVE_TYPE_QUERY, reserveType))};
     }
 
     @SuppressLint("DefaultLocale")
     private void setLabels(ArrayList<Float> entries, ArrayList<Float> expenditures){
         float difference = getDifference(entries, expenditures);
         colonesAmountLabel.setText(String.format(MONEY_FORMAT, difference));
+
         difference = getDifference(entries, expenditures);
         dollarsAmountLabel.setText(String.format(MONEY_FORMAT, difference));
     }
 
+    /**
+     * Handles an array list as stack and pops the first element
+     * @param list Array list to be used
+     * @return Element removed from the array list
+     */
     private Float popListValue(ArrayList<Float> list){
         float value = 0f;
 

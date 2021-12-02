@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.abzave.finances">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,12 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Chart" android:configChanges="orientation|screenSize"></activity>
-        <activity android:name=".activity.TotalAmount" android:configChanges="orientation|screenSize"/>
-        <activity android:name=".activity.Stadistics" android:configChanges="orientation|screenSize"/>
-        <activity android:name=".activity.ExpenditureView" android:configChanges="orientation|screenSize"/>
-        <activity android:name=".activity.AddEntry" android:configChanges="orientation|screenSize"/>
-        <activity android:name=".activity.EditRecordActivity" android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".activity.Chart"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.TotalAmount"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.Stadistics"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.ExpenditureView"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.AddEntry"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".activity.EditRecordActivity"
+            android:configChanges="orientation|screenSize" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

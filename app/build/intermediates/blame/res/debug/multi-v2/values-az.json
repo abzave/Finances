@@ -14,7 +14,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\3468b436c5fe3117adb538a7c1d388a6\\core-1.6.0-beta01\\res\\values-az\\values-az.xml",
+                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\4890818266f60105b226aedf1032bca1\\wear-1.0.0\\res\\values-az\\values-az.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,116",
+                        "endOffsets": "162,279"
+                    },
+                    "to": {
+                        "startLines": "31,32",
+                        "startColumns": "4,4",
+                        "startOffsets": "3004,3116",
+                        "endColumns": "111,116",
+                        "endOffsets": "3111,3228"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Abraham\\.gradle\\caches\\transforms-2\\files-2.1\\f3500cfeb3b595d8840a5f20b80ebd63\\core-1.7.0-alpha01\\res\\values-az\\values-az.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

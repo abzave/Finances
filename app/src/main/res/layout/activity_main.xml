@@ -20,7 +20,7 @@
         android:background="@drawable/button_background"
         android:onClick="goToAddExpenditure"
         android:text="@string/add_entry_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
     <Button
         android:id="@+id/addExpenditure"
@@ -35,7 +35,7 @@
         android:background="@drawable/button_background"
         android:onClick="goToAddExpenditure"
         android:text="@string/add_expenditure_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
     <Button
         android:id="@+id/viewExpenditure"
@@ -50,7 +50,7 @@
         android:background="@drawable/button_background"
         android:onClick="goToExpenditureView"
         android:text="@string/view_expenditures_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
     <Button
         android:id="@+id/checkEntries"
@@ -65,7 +65,7 @@
         android:background="@drawable/button_background"
         android:onClick="goToExpenditureView"
         android:text="@string/view_entries_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
     <Button
         android:id="@+id/stadistics"
@@ -80,6 +80,6 @@
         android:background="@drawable/button_background"
         android:onClick="goToStadistics"
         android:text="@string/stadistics_button"
-        android:textColor="#87868B" />
+        android:textColor="#C7C5CF" />
 
 </RelativeLayout>

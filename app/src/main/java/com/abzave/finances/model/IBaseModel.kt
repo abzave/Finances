@@ -139,6 +139,42 @@ abstract class IBaseModelStatic: IDataBaseConnection {
         return QueryModel(tableName).select(selection)
     }
 
+    /**
+     * Gets the count of all the elements in a table
+     * @param context Application context
+     * @return Number of total records in the table
+     */
+    fun count(context: Context): Int {
+        val database = getDataBaseReader(context)
+        val query = "SELECT COUNT(id) FROM $tableName"
+
+        val results = database.rawQuery(query, null)
+
+        results.moveToFirst()
+        val elementsCount = results.getInt(0)
+        results.close()
+
+        return elementsCount
+    }
+
+    /**
+     * Gets a given amount of records of the table
+     * @param value Number of records to return
+     * @return Query model with the requested limit
+     */
+    fun limit(value: Int): QueryModel {
+        return QueryModel(tableName).limit(value)
+    }
+
+    /**
+     * Skips a given amount of records of the table
+     * @param value Number of records to skip
+     * @return Query model with the requested offset
+     */
+    fun offset(value: Int): QueryModel {
+        return QueryModel(tableName).offset(value)
+    }
+
     protected fun columnsToValues(columns: HashMap<String, Any?>): ContentValues {
         val values = ContentValues()
 
