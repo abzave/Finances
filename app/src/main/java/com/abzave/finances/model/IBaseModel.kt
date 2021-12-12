@@ -32,7 +32,7 @@ abstract class IBaseModelStatic: IDataBaseConnection {
     fun delete(context: Context, deleteValue: Any) {
         val database = getDataBaseWriter(context)
         val whereCondition = "$primaryKey = ?"
-        val whereValues = arrayOf(deleteValue as String)
+        val whereValues = arrayOf(deleteValue.toString())
 
         database.delete(tableName, whereCondition, whereValues)
     }

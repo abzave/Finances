@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.abzave.finances.R;
+import com.abzave.finances.controller.CurrencyController;
+import com.abzave.finances.controller.EntriesController;
 import com.abzave.finances.model.CurrencyType;
 import com.abzave.finances.model.Expenditure;
 import com.abzave.finances.model.QueryModel;
@@ -93,26 +95,16 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         chart.setTransparentCircleColor(BACKGROUND_COLOR);
 
         // Retrieve chart data
-        ArrayList<ArrayList<Object>> data = getDataPie(currency, descriptions);
-        ArrayList<PieEntry> entries = new ArrayList<>();
+        PieDataSet entries = getPieData(currency, descriptions);
 
-        if (data == null || data.isEmpty()){
+        if (entries == null){
             Toast.makeText(this, NO_REGISTERS_MESSAGE, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Map retrieved records to entries
-        data.forEach(row -> {
-            Float sum = (Float) row.get(SUM_COLUMN);
-            String description = (String) row.get(DESCRIPTION_COLUMN_IN_SUM);
-
-            entries.add(new PieEntry(sum, description));
-        });
-
         // Set the data
-        PieDataSet dataSet = new PieDataSet(entries, "");
-        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        chart.setData(new PieData(dataSet));
+        entries.setColors(ColorTemplate.COLORFUL_COLORS);
+        chart.setData(new PieData(entries));
     }
 
     /**
@@ -123,43 +115,16 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
      */
     private void setDataLine(LineChart chart, String currency, ArrayList<String> descriptions){
         // Retrieve chart data
-        ArrayList<Entry> entries = new ArrayList<>();
-        ArrayList<String> labels = new ArrayList<>();
-        ArrayList<ArrayList<Object>> data = getDataLine(currency, descriptions);
+        ArrayList<ILineDataSet> entries = getDataLine(currency, descriptions);
 
-        if (data == null || data.isEmpty()){
+        if (entries == null){
             Toast.makeText(this, NO_REGISTERS_MESSAGE, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Map the retrieved records to entries and date labels
-        data.forEach(row -> {
-            int position = data.indexOf(row);
-            entries.add(new Entry(position, (Float) row.get(SUM_COLUMN)));
-            labels.add( row.get(DATE_COLUMN) != null ? (String) row.get(DATE_COLUMN) : "");
-        });
-
-        // Set the data
-        LineDataSet dataSet = new LineDataSet(entries, "");
-        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-        dataSets.add(dataSet);
-        LineData lineData = new LineData(dataSets);
+        LineData lineData = new LineData(entries);
         lineData.setValueTextColor(Color.WHITE);
         chart.setData(lineData);
-
-        // Adjust the labels
-        XAxis x = chart.getXAxis();
-        x.setPosition(XAxis.XAxisPosition.BOTTOM);
-        x.setValueFormatter((value, axis) -> {
-            int index = Math.round(value);
-
-            if (index < 0 || index >= labels.size() || index != (int)value)
-                return "";
-
-            return labels.get(index);
-        });
-
-        chart.invalidate();
     }
 
     private void styleLineChart(LineChart chart) {
@@ -174,40 +139,36 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
      * @param descriptions Filtered records
      * @return Array of entries/expenditures to be charted
      */
-    private ArrayList<ArrayList<Object>> getDataPie(String currency, ArrayList<String> descriptions){
-        // Get available currencies
-        Pair<String, ?> currencyQuery = new Pair<>("type", currency);
-        ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
-        if (types.isEmpty()){
+    private PieDataSet getPieData(String currency, ArrayList<String> descriptions){
+        int currencyId = CurrencyController.Companion.getId(this, currency);
+
+        String condition = String.format(
+                "currency = %s AND description IN %s",
+                currencyId,
+                toList(descriptions)
+        );
+
+        ArrayList<ArrayList<Object>> data = EntriesController.Companion.get(
+                this,
+                context == ENTRIES_CONTEXT,
+                "SUM(amount), description",
+                condition,
+                "description"
+        );
+
+        ArrayList<PieEntry> entries = new ArrayList<>();
+        data.forEach(row -> {
+            Float sum = (Float) row.get(SUM_COLUMN);
+            String description = (String) row.get(DESCRIPTION_COLUMN_IN_SUM);
+
+            entries.add(new PieEntry(sum, description));
+        });
+
+        if (entries.isEmpty()) {
             return null;
         }
 
-        // Get the currency id to use
-        ArrayList<ArrayList<Object>> data = new ArrayList<>();
-        String currencyId = String.valueOf(types.get(0).get("id"));
-
-        // Creates the needed SQL query
-        String condition = String.format("currency = %s AND description IN %s", currencyId, parseArrayListToSqlList(descriptions));
-        QueryModel query;
-        if(context != ENTRIES_CONTEXT) {
-            query = Expenditure.Companion.select("SUM(amount), description").where(condition).group("description");
-        } else {
-            query = com.abzave.finances.model.Entry.Companion.select("SUM(amount), description").where(condition).group("description");
-        }
-
-        // Get the fetched records
-        ArrayList<Object> amountSums = query.get(this, "amount");
-        ArrayList<Object> descriptionsGot = query.get(this, "description");
-
-        // Map the records to a Java structure
-        for (int elementIndex = 0; elementIndex < amountSums.size(); elementIndex++) {
-            ArrayList<Object> row = new ArrayList<>();
-
-            row.add(amountSums.get(elementIndex));
-            row.add(descriptionsGot.get(elementIndex));
-            data.add(row);
-        }
-        return data;
+        return new PieDataSet(entries, "");
     }
 
     /**
@@ -216,43 +177,37 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
      * @param descriptions Filtered records
      * @return Array of entries/expenditures to be charted
      */
-    private ArrayList<ArrayList<Object>> getDataLine(String currency, ArrayList<String> descriptions){
-        // Get available currencies
-        Pair<String, ?> currencyQuery = new Pair<>("type", currency);
-        ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
-        if (types.isEmpty()){
+    private ArrayList<ILineDataSet> getDataLine(String currency, ArrayList<String> descriptions){
+        int currencyId = CurrencyController.Companion.getId(this, currency);
+
+        String condition = String.format(
+                "currency = %s AND description IN %s",
+                currencyId,
+                toList(descriptions)
+        );
+
+        ArrayList<ArrayList<Object>> data = EntriesController.Companion.get(
+                this,
+                context == ENTRIES_CONTEXT,
+                "SUM(amount), description, strftime('%Y-%m',date)",
+                condition,
+                "strftime('%Y-%m',REPLACE(date,'/','-'))"
+        );
+
+        ArrayList<Entry> entries = new ArrayList<>();
+        data.forEach(row -> {
+            int position = data.indexOf(row);
+            entries.add(new Entry(position, (Float) row.get(SUM_COLUMN)));
+        });
+
+        if (entries.isEmpty()) {
             return null;
         }
 
-        // Get the currency id to use
-        ArrayList<ArrayList<Object>> data = new ArrayList<>();
-        String currencyId = String.valueOf(types.get(0).get("id"));
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(new LineDataSet(entries, ""));
 
-        // Creates the needed SQL query
-        String selection = "SUM(amount), description, strftime('%Y-%m',date)";
-        String condition = String.format("currency = %s AND description IN %s", currencyId, parseArrayListToSqlList(descriptions));
-        String group = "strftime('%Y-%m',REPLACE(date,'/','-'))";
-        QueryModel query;
-        if (context != ENTRIES_CONTEXT) {
-            query = Expenditure.Companion.select(selection).where(condition).group(group);
-        } else {
-            query = com.abzave.finances.model.Entry.Companion.select(selection).where(condition).group(group);
-        }
-
-        ArrayList<Object> amountSums = query.get(this, "amount");
-        ArrayList<Object> descriptionsGot = query.get(this, "description");
-        ArrayList<Object> dates = query.get(this, "date");
-
-        // Map the records to a Java structure
-        for (int elementIndex = 0; elementIndex < amountSums.size(); elementIndex++) {
-            ArrayList<Object> row = new ArrayList<>();
-
-            row.add(amountSums.get(elementIndex));
-            row.add(descriptionsGot.get(elementIndex));
-            row.add(dates.get(elementIndex));
-            data.add(row);
-        }
-        return data;
+        return dataSets;
     }
 
     /**
@@ -261,29 +216,19 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
      * @return All the different descriptions found
      */
     private ArrayList<String> getAllDescriptionsByCurrency(String currency){
-        // Get available currencies
-        Pair<String, ?> currencyQuery = new Pair<>("type", currency);
-        ArrayList<CurrencyType> types = CurrencyType.Companion.findBy(this, currencyQuery);
-        if (types.isEmpty()){
-            return null;
-        }
+        int currencyId = CurrencyController.Companion.getId(this, currency);
 
-        // Get the currency id to use
-        String currencyId = String.valueOf((Integer) types.get(0).get("id"));
-        ArrayList<String> descriptions = new ArrayList<>();
-        QueryModel query;
-
-        // Creates the needed SQL query
-        String condition = "currency = " + currencyId;
-        if (context != ENTRIES_CONTEXT) {
-            query = Expenditure.Companion.select("description").where(condition).group("description");
-        } else {
-            query = com.abzave.finances.model.Entry.Companion.select("description").where(condition).group("description");
-        }
+        ArrayList<ArrayList<Object>> records = EntriesController.Companion.get(
+                this,
+                context != ENTRIES_CONTEXT,
+                "description",
+                "currency = " + currencyId,
+                "description"
+        );
 
         // Maps the fetched records to an array list
-        ArrayList<Object> records = query.get(this, "description");
-        records.forEach(row -> descriptions.add((String) row));
+        ArrayList<String> descriptions = new ArrayList<>();
+        records.forEach(row -> descriptions.add((String) row.get(0)));
         return descriptions;
     }
 
@@ -292,7 +237,7 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
      * @param items array list to joined
      * @return All the items in the array list joined by quotes and comma
      */
-    private String parseArrayListToSqlList(ArrayList<String> items){
+    private String toList(ArrayList<String> items){
         StringJoiner list = new StringJoiner("\",\"", "(\"", "\")");
         items.forEach(list::add);
         return list.toString();
@@ -304,7 +249,7 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
     private void createFilterPopUp(){
         // Creates the dialog
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        final View popup = getLayoutInflater().inflate(R.layout.filter_popup, null);
+        View popup = getLayoutInflater().inflate(R.layout.filter_popup, null);
         dialogBuilder.setView(popup);
         dialog = dialogBuilder.create();
 
@@ -315,10 +260,12 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         Button cancelButton = popup.findViewById(R.id.cancel_button);
         Button filterButton = popup.findViewById(R.id.filter_button);
         cancelButton.setOnClickListener(v -> dialog.dismiss());
+
         filterButton.setOnClickListener(v -> {
             filterByName(popup);
             dialog.dismiss();
         });
+
         dialog.show();
     }
 
@@ -342,7 +289,10 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
 
         // Create the checkboxes
         for (String description : descriptions){
-            CheckBox descriptionCheckbox = new CheckBox(new ContextThemeWrapper(getApplicationContext(), R.style.RadioButtonStyle));
+            CheckBox descriptionCheckbox = new CheckBox(
+                    new ContextThemeWrapper(getApplicationContext(), R.style.RadioButtonStyle)
+            );
+
             descriptionCheckbox.setText(description);
             descriptionCheckbox.setTextColor(Color.WHITE);
             layout.addView(descriptionCheckbox, startIndex);
@@ -351,7 +301,9 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
     }
 
     private View getCurrencyLabel(String currency, LinearLayout layout){
-        return currency.equals(DOLLARS) ? layout.findViewById(R.id.dollars_label) : layout.findViewById(R.id.colones_label);
+        return currency.equals(DOLLARS)
+                ? layout.findViewById(R.id.dollars_label)
+                : layout.findViewById(R.id.colones_label);
     }
 
     /**
@@ -366,8 +318,13 @@ public class Chart extends AppCompatActivity implements IDataBaseConnection {
         ArrayList<String> dollarsDescriptions = getCheckedDescriptions(layout, DOLLARS);
 
         // Filter the descriptions, if none selected all are loaded
-        colonesDescriptions = colonesDescriptions.isEmpty() ? getAllDescriptionsByCurrency(COLONES) : colonesDescriptions;
-        dollarsDescriptions = dollarsDescriptions.isEmpty() ? getAllDescriptionsByCurrency(DOLLARS) : dollarsDescriptions;
+        colonesDescriptions = colonesDescriptions.isEmpty()
+                ? getAllDescriptionsByCurrency(COLONES)
+                : colonesDescriptions;
+
+        dollarsDescriptions = dollarsDescriptions.isEmpty()
+                ? getAllDescriptionsByCurrency(DOLLARS)
+                : dollarsDescriptions;
 
         // Reset data
         chartColones.clear();

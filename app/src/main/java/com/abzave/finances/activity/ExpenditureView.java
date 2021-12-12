@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.abzave.finances.R;
 import com.abzave.finances.model.Entry;
@@ -28,13 +31,11 @@ import java.util.ArrayList;
 public class ExpenditureView extends AppCompatActivity implements IDataBaseConnection {
 
     private final int PAGE_SIZE = 15;
-    private final int MAX_PAGES_TO_SHOW = 5;
 
     private LinearLayout layout;
     private LinearLayout buttonsLayout;
     private TextView baseLabel;
     private boolean isEntry;
-    private int totalRecords;
     private int totalPages;
     private int currentPage = 1;
 
@@ -43,8 +44,8 @@ public class ExpenditureView extends AppCompatActivity implements IDataBaseConne
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expenditure_view);
 
-        calculatePages();
         getUiElements();
+        calculatePages();
     }
 
     @Override
@@ -57,11 +58,11 @@ public class ExpenditureView extends AppCompatActivity implements IDataBaseConne
      * Calculates the total amount of pages that will be required based on the amount of records
      */
     private void calculatePages() {
-        totalRecords = this.isEntry
+        int totalRecords = this.isEntry
                 ? Entry.Companion.count(this)
                 : Expenditure.Companion.count(this);
 
-        totalPages = (totalRecords / PAGE_SIZE) + 1;
+        totalPages = (int) Math.ceil(totalRecords / (double) PAGE_SIZE);
     }
 
     private void getUiElements(){
@@ -181,29 +182,68 @@ public class ExpenditureView extends AppCompatActivity implements IDataBaseConne
         // Sets up the edit button
         Button editButton = new Button(context);
         int buttonWidth = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, widthInDp, metrics);
+
         editButton.setBackground(ContextCompat.getDrawable(context, android.R.drawable.ic_menu_edit));
         editButton.setLayoutParams(new LinearLayout.LayoutParams(buttonWidth, LinearLayout.LayoutParams.WRAP_CONTENT));
         editButton.setGravity(Gravity.TOP);
-        editButton.setOnClickListener(view -> this.onEdit(view, id));
+        editButton.setOnClickListener(view -> this.onEdit(id));
+
+        Button deleteButton = new Button(context);
+        deleteButton.setBackground(ContextCompat.getDrawable(context, android.R.drawable.ic_menu_delete));
+        deleteButton.setLayoutParams(new LinearLayout.LayoutParams(buttonWidth, LinearLayout.LayoutParams.WRAP_CONTENT));
+        deleteButton.setGravity(Gravity.TOP);
+        deleteButton.setOnClickListener(view -> this.onDelete(id));
 
         // Adds the elements to the new layout
         card.addView(elementLabel);
         card.addView(spacer);
+        card.addView(deleteButton);
         card.addView(editButton);
         return card;
     }
 
     /**
      * Opens a new edit record activity
-     * @param view
      * @param id id of the record to be edited
      */
-    private void onEdit(View view, int id) {
+    private void onEdit(int id) {
         Intent intent = new Intent(this, EditRecordActivity.class);
         intent.putExtra("id", id);
         intent.putExtra("entry", isEntry);
 
         startActivity(intent);
+    }
+
+    /**
+     * Opens a new edit record activity
+     * @param id id of the record to be edited
+     */
+    private void onDelete(int id) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Borrar " + (this.isEntry ? "ingreso" : "gasto") + "?")
+                .setMessage(
+                        "Seguro de querer borrar " +
+                        (this.isEntry ? "ingreso" : "gasto") +
+                        " " +
+                        id +
+                        "?"
+                );
+
+        builder.setPositiveButton("Seguro!", (dialog, buttonId) -> {
+            if (this.isEntry) {
+                Entry.Companion.delete(this, id);
+            } else {
+                Expenditure.Companion.delete(this, id);
+            }
+            loadExpenditures();
+        });
+
+        builder.setNegativeButton("Nope", (dialog, buttonId) -> {
+            dialog.cancel();
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     /**
@@ -223,6 +263,7 @@ public class ExpenditureView extends AppCompatActivity implements IDataBaseConne
         startPage = Math.min(startPage, totalPages - 4);
 
         // Show only 5 pages or all the pages if there are less than 5
+        int MAX_PAGES_TO_SHOW = 5;
         int lastIndexToShow = Math.min(totalPages, MAX_PAGES_TO_SHOW + startPage - 1);
 
         for (int page = startPage; page <= lastIndexToShow; page++) {

@@ -4,36 +4,15 @@ import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.abzave.finances.lib.IConstants.*
-import com.abzave.finances.model.CurrencyType
-import com.abzave.finances.model.Entry
-import com.abzave.finances.model.Expenditure
-import com.abzave.finances.model.IBaseModel
+import com.abzave.finances.model.*
 import com.abzave.finances.model.database.IDataBaseConnection
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import kotlin.reflect.KClass
+import kotlin.reflect.full.companionObject
+import kotlin.reflect.full.companionObjectInstance
 
 class EntriesController : IDataBaseConnection {
 
-    companion object {
-
-        /**
-         *  Returns the record id of a currency base on the currency name
-         *  @param context Application context
-         *  @param currencyName Name of the currency to get the id of
-         *  @return id of record for the currency given or -1 if it was not found
-         */
-        fun getCurrencyId(context: Context, currencyName: String): Int {
-            // Gets all the currency available
-            val currencyQuery: Pair<String, String> = Pair("type", currencyName)
-            val types: ArrayList<CurrencyType> = CurrencyType.findBy(context, currencyQuery)
-
-            // Returns -1 if the currency does not exist
-            if(types.isEmpty()) {
-                return -1;
-            }
-
-            return types[0].get("id") as Int
-        }
+    companion object : BaseController() {
 
         /**
          * Creates a new record in the entry table based on UI information
@@ -53,7 +32,7 @@ class EntriesController : IDataBaseConnection {
                 currencyName: String,
                 isEntry: Boolean
         ) {
-            val currency: Int = getCurrencyId(context, currencyName)
+            val currency: Int = CurrencyController.getId(context, currencyName)
             val values: HashMap<String, Any?> = hashMapOf(
                     AMOUNT to amount,
                     DESCRIPTION to description,
@@ -66,14 +45,33 @@ class EntriesController : IDataBaseConnection {
         }
 
         /**
-         * Get the current date with the format yyyy-mm-dd
-         * @return today's date formatted as yyyy-mm-dd
+         * Returns a new query with the information
+         * isEntry = true, use model Entry
+         * isEntry = false, use model Expenditure
+         * @param context Application context
+         * @param isEntry Model to use
+         * @param selection Column to select on the query
+         * @param condition Condition for where on the query
+         * @param group Grouping for query
          */
-        @RequiresApi(Build.VERSION_CODES.O)
-        fun getDate(): String {
-            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-            val now = LocalDateTime.now()
-            return formatter.format(now)
+        fun get(
+                context: Context,
+                isEntry: Boolean,
+                selection: String? = null,
+                condition: String? = null,
+                group: String? = null
+        ) : ArrayList<ArrayList<Any?>> {
+            val query: QueryModel = (if (isEntry) Entry else Expenditure)
+                    .select(selection ?: "*")
+
+            if (!condition.isNullOrBlank()) {
+                query.where(condition)
+            }
+            if (!group.isNullOrBlank()) {
+                query.group(group)
+            }
+
+            return query.getAll(context)
         }
 
     }

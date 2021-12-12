@@ -76,6 +76,31 @@ class QueryModel(private val table: String): IDataBaseConnection {
         return values
     }
 
+    fun getAll(context: Context): ArrayList<ArrayList<Any?>> {
+        if (selections.isEmpty()) {
+            return arrayListOf()
+        }
+
+        val database = getDataBaseWriter(context)
+        val cursor = database.rawQuery(toString(), null)
+        val records = arrayListOf<ArrayList<Any?>>()
+
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast) {
+            val values = arrayListOf<Any?>()
+
+            0.until(cursor.columnCount).forEach { columnIndex ->
+                values.add(valueFromCursor(cursor, columnIndex))
+            }
+
+            records.add(values)
+            cursor.moveToNext()
+        }
+        cursor.close()
+
+        return records
+    }
+
     override fun toString(): String {
         var query = "SELECT $selections FROM $table "
 
